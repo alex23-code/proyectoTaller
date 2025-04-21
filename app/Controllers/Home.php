@@ -4,13 +4,15 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    public function index(): string
-    {
-        return view('nueva_plantilla');
+    public function index(): string {
+        $data['titulo'] = "Index";
+        return view('plantillas/header_view', $data).
+        view('Contenidos/principal_view').view('plantillas/footer_view');
     }
-    // Método para la segunda vista
-    public function otra_vista(): string
-    {
-        return view('nueva_plantilla');
+    public function somos
+    (){
+        $data['titulo'] = "Quienes Somos";
+        return view('plantillas/header_view', $data).
+        view('Contenidos/nosotros_view').view('plantillas/footer_view');
     }
 }
