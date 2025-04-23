@@ -13,16 +13,16 @@
         <section> 
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid"> 
-                    <a class="navbar-brand" href="#">Mi pagina principal</a>
+                    <a class="navbar-brand" href="<?php echo base_url('/'); ?>">Mi pagina principal</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <il class="nav-item"><a aria-current="page"  class="nav-link active" href="<?php echo base_url('Nosotros'); ?>">Sobre Nosotros</a></il>
-                            <il class="nav-item"><a aria-current="page"  class="nav-link active" href="#">Comercialización</a></il>
-                            <il class="nav-item"><a aria-current="page"  class="nav-link active" href="#">Contacto</a></il>
-                            <il class="nav-item"><a aria-current="page"  class="nav-link active" href="#">Términos y Usos</a></il>
+                            <il class="nav-item"><a aria-current="page"  class="nav-link active" href="<?php echo base_url('Comercializacion'); ?>">Comercialización</a></il>
+                            <il class="nav-item"><a aria-current="page"  class="nav-link active" href="<?php echo base_url('Comercializacion'); ?>">Contacto</a></il>
+                            <il class="nav-item"><a aria-current="page"  class="nav-link active" href="<?php echo base_url('Comercializacion'); ?>">Términos y Usos</a></il>
                         </ul>
                         <form class="d-flex" role="search">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

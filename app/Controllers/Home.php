@@ -9,10 +9,14 @@ class Home extends BaseController
         return view('plantillas/header_view', $data).
         view('Contenidos/principal_view').view('plantillas/footer_view');
     }
-    public function somos
-    (){
+    public function somos(){
         $data['titulo'] = "Quienes Somos";
         return view('plantillas/header_view', $data).
         view('Contenidos/nosotros_view').view('plantillas/footer_view');
+    }
+    public function comercializacion() {
+            $data['titulo'] = "Comercializacion";
+            return view('plantillas/header_view', $data).
+            view('Contenidos/comercializacion_view').view('plantillas/footer_view');
     }
 }
