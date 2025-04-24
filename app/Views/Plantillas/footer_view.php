@@ -12,8 +12,8 @@
             <div class="col-md-4">
                 <h5>NOSOTROS</h5>
                 <ul>
-                    <li><a href="#">Acerca de Nosotros</a></li>
-                    <li><a href="#">Sucursales</a></li>
+                    <li><a href="<?php echo base_url('Nosotros'); ?>">Acerca de Nosotros</a></li>
+                    <li><a href="<?php echo base_url('Nosotros'); ?>">Sucursales</a></li>
                     <li><a href="#">Contacto</a></li>
                     <li><a href="#">Términos y Condiciones</a></li>
                 </ul>
@@ -21,8 +21,7 @@
             <div class="col-md-4">
                 <h5>INFORMACIÓN</h5>
                 <ul >
-                    <li><a href="#">Medios de pago</a></li>
-                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="<?php echo base_url('Comercializacion'); ?>">Medios de pago</a></li>
                     <li><a href="#">Políticas de envío</a></li>
                     <li><a href="#">Políticas de privacidad</a></li>
                     <li><a href="#">Políticas de cambio y devolución</a></li>
