@@ -19,10 +19,12 @@
 
 .product-card img {
     max-width: 100%;
-    height: auto;
+    height: 230px;
     margin-bottom: 10px;
     border-radius: 5px;
+    object-fit: cover;
 }
+
 
 .product-card p {
     margin-bottom: 5px;
@@ -34,11 +36,17 @@
     color: #007bff;
 }
 
+.row{
+    width: 100%;
+    margin:0;
+    padding:0;
+}
+
 .sidebar {
     width: 20%; /* Ocupa el 20% del ancho */
     background-color: #f8f9fa;
     padding: 15px;
-    border-right: 1px solid #ddd;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar h3 {
@@ -49,6 +57,9 @@
 .sidebar ul {
     list-style: none;
     padding: 0;
+}
+.sidebar ul :hover {
+    padding-left: 5px;
 }
 
 .sidebar ul li {
@@ -65,9 +76,10 @@
     color: #000;
     font-weight: bold;
     border-left: 4px solid #007bff;
-    padding-left: 8px;
+    padding-left: 5px;
 }
 
 .Category-title h2{
-    border-bottom: 1px solid #000000;
+    /*border-bottom: 1px solid #000000;*/
+    box-shadow: 0px 4px 30px 4px rgba(0, 0, 0, 0.1);
 }
