@@ -8,18 +8,13 @@
 }
 
 .dropdown-content {
-    display: none;
-    position: relative;
+  display: inline-block;
     background-color: white;
-    width: 100%;
-    min-width: 160px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 75%;
     padding: 10px;
-    z-index: 1;
-    text-align: start;
+    text-align: center;
+    margin-left: 70px;
 }
-
-
 
 .dropdown-button {
   background-color: #757f84bb; 
@@ -37,7 +32,9 @@
   margin: 0 auto;
 }
 
-
+h1{
+  text-align: center;
+}
 
 .contenido {
   width: 80%; /* Contenido ocupa el 80% del ancho restante */
@@ -53,6 +50,7 @@
   background-color: #f4f4f4; /* Color de fondo del sidebar */
   padding: 10px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+  position: relative;
 }
 
 h1 {
@@ -60,14 +58,49 @@ h1 {
 }
 
 .btn {
-  padding: 10px 20px; /* Tamaño del botón */
-  background-color: #92aac3; /* Color azul */
-  color: white; /* Texto en blanco */
-  border: none; /* Sin borde */
-  border-radius: 5px; /* Bordes redondeados */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  padding: 10px 20px;
+  color: white;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
+.btn:hover {
+  background-color: #0056b3;
+}
+
 
 .btn:hover {
   background-color: #8699ad; /* Cambia el color al pasar el cursor */
 }
+
+.bloque_a_derecha{
+  float: left;
+}
+
+.bloques {
+  padding: 1.5rem;
+  margin: 75px;
+  max-width: 800px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+
+.titulo{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color:#007BFF;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+.bloques h1 {
+  color: #007BFF;
+}
+
