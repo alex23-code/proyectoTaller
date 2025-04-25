@@ -145,6 +145,135 @@
                         </div>
                     </div>
                 </div>
+                <!-- siguiente fila -->
+                <div class="row">
+                    <!-- Producto 1 -->
+                    <div class="col-md-3">
+                        <div class="product-card">
+                            <img src="assets/img/RemeraHombre1.png" alt="...">
+                            <p>$60.000</p>
+                            <h6>Camiseta Musculosa River Plate 24/25 adidas Hombre</h6>
+                            <span>6 cuotas de $10.000 sin interés</span>
+                            <button class="btn btn-primary mt-0"><i class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                    </div>
+                    <!-- Producto 2 -->
+                    <div class="col-md-3">
+                        <div class="product-card">
+                            <img src="assets/img/RemeraHombre2.png" alt="...">
+                            <p>$55.000</p>
+                            <h6>Camiseta adidas Selección Argentina Titular 24/25 De Hombre</h6>
+                            <span>6 cuotas de $10.000 sin interés</span>
+                            <button class="btn btn-primary mt-0"><i class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                    </div>
+                    <!-- Producto 3 -->
+                    <div class="col-md-3">
+                        <div class="product-card">
+                            <img src="assets/img/RemeraHombre3.png" alt="...">
+                            <p>$40.000</p>
+                            <h6>Camiseta adidas Inter Miami Titular 22/23 Messi De Hombre</h6>
+                            <span>6 cuotas de $6.666,67 sin interés</span>
+                            <button class="btn btn-primary mt-0"><i class="fa-solid fa-cart-shopping"></i> </button>
+                        </div>
+                    </div>
+                    <!-- Producto 4 -->
+                    <div class="col-md-3">
+                        <div class="product-card">
+                            <img src="assets/img/RemeraHombre4.png" alt="...">
+                            <p>$50.000</p>
+                            <h6>Camiseta Puma Manchester City Pre-Match De Hombre</h6>
+                            <span>6 cuotas de $8.333,33 sin interés</span>
+                            <button class="btn btn-primary mt-0"><i class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- siguiente fila -->
+                <div class="row">
+                    <!-- Producto 1 -->
+                    <div class="col-md-3">
+                        <div class="product-card">
+                            <img src="assets/img/RemeraHombre1.png" alt="...">
+                            <p>$60.000</p>
+                            <h6>Camiseta Musculosa River Plate 24/25 adidas Hombre</h6>
+                            <span>6 cuotas de $10.000 sin interés</span>
+                            <button class="btn btn-primary mt-0"><i class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                    </div>
+                    <!-- Producto 2 -->
+                    <div class="col-md-3">
+                        <div class="product-card">
+                            <img src="assets/img/RemeraHombre2.png" alt="...">
+                            <p>$55.000</p>
+                            <h6>Camiseta adidas Selección Argentina Titular 24/25 De Hombre</h6>
+                            <span>6 cuotas de $10.000 sin interés</span>
+                            <button class="btn btn-primary mt-0"><i class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                    </div>
+                    <!-- Producto 3 -->
+                    <div class="col-md-3">
+                        <div class="product-card">
+                            <img src="assets/img/RemeraHombre3.png" alt="...">
+                            <p>$40.000</p>
+                            <h6>Camiseta adidas Inter Miami Titular 22/23 Messi De Hombre</h6>
+                            <span>6 cuotas de $6.666,67 sin interés</span>
+                            <button class="btn btn-primary mt-0"><i class="fa-solid fa-cart-shopping"></i> </button>
+                        </div>
+                    </div>
+                    <!-- Producto 4 -->
+                    <div class="col-md-3">
+                        <div class="product-card">
+                            <img src="assets/img/RemeraHombre4.png" alt="...">
+                            <p>$50.000</p>
+                            <h6>Camiseta Puma Manchester City Pre-Match De Hombre</h6>
+                            <span>6 cuotas de $8.333,33 sin interés</span>
+                            <button class="btn btn-primary mt-0"><i class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- siguiente fila -->
+                <div class="row">
+                    <!-- Producto 1 -->
+                    <div class="col-md-3">
+                        <div class="product-card">
+                            <img src="assets/img/RemeraHombre1.png" alt="...">
+                            <p>$60.000</p>
+                            <h6>Camiseta Musculosa River Plate 24/25 adidas Hombre</h6>
+                            <span>6 cuotas de $10.000 sin interés</span>
+                            <button class="btn btn-primary mt-0"><i class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                    </div>
+                    <!-- Producto 2 -->
+                    <div class="col-md-3">
+                        <div class="product-card">
+                            <img src="assets/img/RemeraHombre2.png" alt="...">
+                            <p>$55.000</p>
+                            <h6>Camiseta adidas Selección Argentina Titular 24/25 De Hombre</h6>
+                            <span>6 cuotas de $10.000 sin interés</span>
+                            <button class="btn btn-primary mt-0"><i class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                    </div>
+                    <!-- Producto 3 -->
+                    <div class="col-md-3">
+                        <div class="product-card">
+                            <img src="assets/img/RemeraHombre3.png" alt="...">
+                            <p>$40.000</p>
+                            <h6>Camiseta adidas Inter Miami Titular 22/23 Messi De Hombre</h6>
+                            <span>6 cuotas de $6.666,67 sin interés</span>
+                            <button class="btn btn-primary mt-0"><i class="fa-solid fa-cart-shopping"></i> </button>
+                        </div>
+                    </div>
+                    <!-- Producto 4 -->
+                    <div class="col-md-3">
+                        <div class="product-card">
+                            <img src="assets/img/RemeraHombre4.png" alt="...">
+                            <p>$50.000</p>
+                            <h6>Camiseta Puma Manchester City Pre-Match De Hombre</h6>
+                            <span>6 cuotas de $8.333,33 sin interés</span>
+                            <button class="btn btn-primary mt-0"><i class="fa-solid fa-cart-shopping"></i></button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section> 
     </body>

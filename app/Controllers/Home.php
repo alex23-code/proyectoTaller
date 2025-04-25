@@ -17,6 +17,6 @@ class Home extends BaseController
     public function comercializacion() {
             $data['titulo'] = "Comercializacion";
             return view('plantillas/header_view', $data).
-            view('Contenidos/comercializacion_view').view('plantillas/footer_view');
+            view('Contenidos/comercializacion/comercializacion_view').view('plantillas/footer_view');
     }
 }

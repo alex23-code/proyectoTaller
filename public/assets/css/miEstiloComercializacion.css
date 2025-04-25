@@ -1,9 +1,10 @@
   .dropdown {
     position: relative;
     display: inline-block;
-    width: 100%; 
+    width: 75%; 
     text-align: center;
     padding: 10px;
+    left: +30%;
 }
 
 .dropdown-content {
@@ -15,21 +16,20 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     padding: 10px;
     z-index: 1;
+    text-align: start;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
+
 
 .dropdown-button {
-  background-color: #00aaff; 
+  background-color: #757f84bb; 
   color: white;
   font-weight: bold;
   padding: 12px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: none;
   display: block; 
   text-align: center; 
   font-size: 18px; 
@@ -38,6 +38,36 @@
 }
 
 
+
+.contenido {
+  width: 80%; /* Contenido ocupa el 80% del ancho restante */
+  padding: 20px;
+  background-color: #fff; /* Fondo del contenido */
+   /* Asegura que ocupe toda la altura de la pantalla */
+
+}
+
+.sidebar {
+  width: 20%; /* Sidebar ocupa el 20% del ancho */
+  height: 100%;
+  background-color: #f4f4f4; /* Color de fondo del sidebar */
+  padding: 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+}
+
 h1 {
   font-size: 1.5rem;
+}
+
+.btn {
+  padding: 10px 20px; /* Tamaño del botón */
+  background-color: #92aac3; /* Color azul */
+  color: white; /* Texto en blanco */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.btn:hover {
+  background-color: #8699ad; /* Cambia el color al pasar el cursor */
 }
