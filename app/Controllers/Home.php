@@ -15,14 +15,13 @@ class Home extends BaseController
         view('Contenidos/nosotros_view').view('plantillas/footer_view');
     }
     public function comercializacion() {
-            $data['titulo'] = "Comercializacion";
-            return view('plantillas/header_view', $data).
-            view('Contenidos/comercializacion/comercializacion_view').view('plantillas/footer_view');
+        $data['titulo'] = "Comercializacion";
+        return view('plantillas/header_view', $data).
+        view('Contenidos/comercializacion/comercializacion_view').view('plantillas/footer_view');
     }
-
     public function contacto() {
         $data['titulo'] = "Contacto";
         return view('plantillas/header_view', $data).
         view('Contenidos/comercializacion/contacto').view('plantillas/footer_view');
-}
+    }
 }
