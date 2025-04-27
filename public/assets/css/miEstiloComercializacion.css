@@ -46,11 +46,12 @@ h1{
 
 .sidebar {
   width: 20%; /* Sidebar ocupa el 20% del ancho */
-  height: 100%;
+  height: 23%;
   background-color: #f4f4f4; /* Color de fondo del sidebar */
   padding: 10px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra opcional */
-  position: absolute;
+  position: relative;
+
 }
 
 h1 {
@@ -58,7 +59,8 @@ h1 {
 }
 
 .btn {
-  padding: 10px 20px;
+  padding: 10px 10px;
+  
   color: white;
   background-color: #007BFF;
   border: none;
@@ -75,13 +77,9 @@ h1 {
   background-color: #8699ad; /* Cambia el color al pasar el cursor */
 }
 
-.bloque_a_derecha{
-  float: left;
-}
-
 .bloques {
   padding: 1.5rem;
-  margin: 75px;
+  margin: 20px;
   max-width: 800px;
   border: 1px solid #ddd;
   border-radius: 10px;
@@ -94,7 +92,8 @@ h1 {
 
 .titulo{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color:#007BFF;
+  color:#2762a1;
+  font-size: 40px;
 }
 
 body {
@@ -102,5 +101,17 @@ body {
 }
 .bloques h1 {
   color: #007BFF;
+}
+
+.botones {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center; /* Centra los botones horizontalmente */
+  gap: 10px; /* Espaciado entre botones */
+}
+
+
+button:hover {
+  background-color: #0466c8; /* Cambia el color al pasar el mouse */
 }
 

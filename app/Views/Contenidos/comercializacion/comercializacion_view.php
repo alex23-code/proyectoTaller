@@ -1,10 +1,11 @@
+
 <h1 class="titulo">Comercializacion</h1>
-<img src="assets/img/portadaComercializacion.jpg" alt="" width="100%" height="50%">
+<img src="assets/img/portadaComercializacion.jpg" alt="" width="100%" height="75%">
 
 <link href="./assets/css/miEstiloComercializacion.css" rel="stylesheet">
 
-  <section class="container-fluid">
-      <aside class="sidebar">
+  <section class="container-fluid" >
+      <aside class="botones">
       <a href="#contenidopago" class="btn">
     
       Métodos de pago
@@ -17,6 +18,7 @@
     
     Preguntas Frecuentes
     </a>
+     </aside>
 </section>
 
 <section id="contenidopago" class="bloques">
@@ -61,16 +63,45 @@
 
       <section id="preguntas-frecuentes" class="bloques">
       <h1>Preguntas Frecuentes:</h1>  
-      <p>¿Cómo realizar un cambio?</p>
-      <p>Si necesitas realizar un cambio o devolución de uno o más productos, podes acceder a la seccion cambios y devoluciones para solicitar la devolucion.
-        Tienes de 10 dias para solicitar la devolucion <p/>
-      <p>¿Cómo sé que mi pago fue acreditado?</p>
-      <p>Una vez que tu pago haya sido acreditado correctamente por administración, recibirás un correo electrónico informándote el número de acreditación.</p>
-      <p>¿Cuántos cambios gratis puedo realizar?</p>
-      <p>Uno, a menos que el motivo del cambio sea un error nuestro de despacho. Los cambios siguientes tienen un costo de envío de $8.990</p>
-    <p>Me arrepentí de comprar mi producto. ¿Lo puedo devolver?</p>
-    <p>Sí. Todo lo que compres en https://www.sporting.com.ar lo podes cambiar a menos que se trate de productos identificados como LIQUIDACIÓN cuyos cambios estarán condicionados a disponibilidad de stock. 
-      En caso de querer cambiar por otro producto, podrás hacerlo eligiendo cualquier artículo de los que estén en la web. Si el nuevo producto elegido tiene un costo mayor, se te cobrará la diferencia correspondiente ( ver: https:///politicas-de-cambio).</p>
-    
-    
+      <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      ¿Cómo realizar un cambio?
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Cambio.</strong> Si necesitas realizar un cambio o devolución de uno o más productos, podes acceder a la seccion cambios y devoluciones para solicitar la devolucion.
+        Tienes de 10 dias para solicitar la devolucion.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      ¿Cómo sé que mi pago fue acreditado?
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Comprobante.</strong> Una vez que tu pago haya sido acreditado correctamente por administración, recibirás un correo electrónico informándote el número de acreditación.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+      Me arrepentí de comprar mi producto. ¿Lo puedo devolver?
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>Sí. </strong>Todo lo que compres en https://www.forsport.com.ar lo podes cambiar a menos que se trate de productos identificados como LIQUIDACIÓN cuyos cambios estarán condicionados a disponibilidad de stock. 
+        En caso de querer cambiar por otro producto, podrás hacerlo eligiendo cualquier artículo de los que estén en la web. Si el nuevo producto elegido tiene un costo mayor, se te cobrará la diferencia correspondiente ( ver: https:///politicas-de-cambio).
+      </div>
+    </div>
+  </div>
+</div>
     </section>
+    
