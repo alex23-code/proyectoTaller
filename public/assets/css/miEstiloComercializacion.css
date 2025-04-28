@@ -1,117 +1,77 @@
-  .dropdown {
-    position: relative;
-    display: inline-block;
-    width: 75%; 
-    text-align: center;
-    padding: 10px;
-    left: +30%;
+html, body {
+  margin: 0; 
+  padding: 0; 
+  height: 100%; 
+  width: 100%; 
+  display: flex; 
+  flex-direction: column; 
+  box-sizing: border-box; 
 }
 
-.dropdown-content {
-  display: inline-block;
-    background-color: white;
-    width: 75%;
-    padding: 10px;
-    text-align: center;
-    margin-left: 70px;
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: flex-start; 
+  width: 100%; 
 }
 
-.dropdown-button {
-  background-color: #757f84bb; 
-  color: white;
-  font-weight: bold;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: none;
-  display: block; 
-  text-align: center; 
-  font-size: 18px; 
-  width: 100%;
-  margin: 0 auto;
+body{
+  background-color: #f4f4f4;
+}
+
+.container-fluid .banner-comercializacion {
+  margin-left: 10px;
+  margin-right: 10px; 
+  max-width: calc(100% - 40px);
+  border-radius: 5px;
 }
 
 h1{
   text-align: center;
-}
-
-.contenido {
-  width: 80%; /* Contenido ocupa el 80% del ancho restante */
-  padding: 20px;
-  background-color: #fff; /* Fondo del contenido */
-   /* Asegura que ocupe toda la altura de la pantalla */
-
-}
-
-.sidebar {
-  width: 20%; /* Sidebar ocupa el 20% del ancho */
-  height: 23%;
-  background-color: #f4f4f4; /* Color de fondo del sidebar */
-  padding: 10px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra opcional */
-  position: relative;
-
-}
-
-h1 {
   font-size: 1.5rem;
 }
 
-.btn {
-  padding: 10px 10px;
-  
-  color: white;
-  background-color: #007BFF;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-.btn:hover {
-  background-color: #0056b3;
-}
-
-
-.btn:hover {
-  background-color: #8699ad; /* Cambia el color al pasar el cursor */
+.accordion-button:not(.collapsed) {
+  background-color:  rgb(209, 207, 207);
+  box-shadow: none;
 }
 
 .bloques {
-  padding: 1.5rem;
-  margin: 20px;
-  max-width: 800px;
-  border: 1px solid #ddd;
+  width: 900px; 
+  padding: 20px;
+  margin: 30px auto;
+  background-color: #ffffff;
   border-radius: 10px;
-  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left; 
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-
-.titulo{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color:#2762a1;
-  font-size: 40px;
+@media (max-width: 768px) {
+  main {
+      width: 90%; 
+  }
 }
 
 body {
   font-family: 'Roboto', sans-serif;
 }
+
 .bloques h1 {
-  color: #007BFF;
+  color: green;
 }
 
 .botones {
   margin-top: 10px;
   display: flex;
-  justify-content: center; /* Centra los botones horizontalmente */
-  gap: 10px; /* Espaciado entre botones */
+  justify-content: center; 
+  gap: 10px; 
 }
-
 
 button:hover {
-  background-color: #0466c8; /* Cambia el color al pasar el mouse */
+  background-color: rgb(209, 207, 207); 
 }
-

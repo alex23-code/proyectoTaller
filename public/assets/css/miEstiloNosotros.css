@@ -1,0 +1,131 @@
+
+header{
+    width: 100%;
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #28a745, #4bd960);
+    color: white;
+    font-size: 40px;
+}
+
+main {
+    flex: 1;
+}
+
+body{
+    background-color: #f4f4f4;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+main section {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    color: #28a745;
+    text-transform: uppercase;
+}
+
+.intro p {
+    font-size: 1.1rem;
+    text-align: justify;
+    color: #555;
+}
+
+.vision-mission {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; 
+}
+
+.vision, .mission {
+    flex: 1;
+    background: #f4f4f9;
+    padding: 15px;
+    border-left: 4px solid #28a745;
+    border-radius: 5px;
+}
+
+.vision h2, .mission h2 {
+    margin-top: 0;
+}
+
+.values ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.values ul li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.team {
+    text-align: center;
+}
+
+.team-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.team-gallery img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.team-gallery img:hover {
+    transform: scale(1.1);
+}
+
+.team-description {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.team-member {
+    flex: 1 1 200px;
+    text-align: center;
+    background-color: #f4f4f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-member h3 {
+    color: #28a745;
+    margin: 0 0 10px;
+}
+
+.team-member p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+

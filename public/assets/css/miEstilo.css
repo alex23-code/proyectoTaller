@@ -14,7 +14,27 @@ footer{
     background-color: rgb(233, 231, 235);
     margin: 0 auto;
     width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
 }
+
+footer .footer-section {
+    margin: 10px;
+}
+
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column; 
+        align-items: center; 
+        text-align: center; 
+    }
+
+    footer .footer-section {
+        margin-bottom: 15px; 
+    }
+}
+
 a {
     text-decoration: none; 
     color: black; 
@@ -29,13 +49,12 @@ footer a:hover {
     font-weight: bold;
 }
 p{
-    color: rgb(0, 0, 0);    
     font-size: 20px;
 }
 html,body {
     display: flex;
     flex-direction: column;
-    height: 100%; 
+    min-height: 100vh; 
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
 }
@@ -49,6 +68,15 @@ nav{
 nav a:hover {
     text-decoration: none; 
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer ul{
+    list-style: none;
+    padding: 0;
+}
+
+footer p {
+    font-size: 0.8rem;
 }
 
 .menu-button {
@@ -73,7 +101,7 @@ nav a:hover {
     position: fixed;
     top: 0;
     right: 0; 
-    width: 300px;
+    width: 400px;
     height: 100%;
     background-color: #fff;
     box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
@@ -136,6 +164,50 @@ nav a:hover {
     }
 }
 
-.botonIniciarSesion{
+#cartTitle {
+    background-color: #28a745;
+    color: white; 
+    text-align: center;
+    padding: 10px; 
+    font-size: 25px; 
+    font-weight: bold; 
+    border-radius: 5px 5px 0 0; 
+    margin-bottom: 15px; 
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.cart-item img {
+    width: 50px; 
+    height: 50px;
     margin-right: 10px;
+    border-radius: 5px;
+}
+
+.cart-item p {
+    margin: 0; 
+    font-size: 14px; 
+    line-height: 1.2; 
+}
+
+.select-talle {
+    padding: 3px; 
+    font-size: 12px; 
+}
+
+.btn-remove {
+    padding: 5px 8px;
+    font-size: 12px; 
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
