@@ -27,6 +27,7 @@
                             </ul>
                         </div>
                          <div>
+                         <button class="menu-button botonIniciarSesion" type="submit" onclick="location.href='<?= base_url('IniciarSesion') ?>';">Iniciar Sesion</button>
                             <button id="menuButton1" class="menu-button"><i class="fa-solid fa-user"></i> Perfil</button>
                             <button id="menuButton2" class="menu-button"><i class="fa-solid fa-cart-shopping"></i> Carrito</button>
                             <div id="overlay" class="hidden"></div>
