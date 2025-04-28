@@ -17,17 +17,11 @@ class Home extends BaseController
     public function comercializacion() {
         $data['titulo'] = "Comercializacion";
         return view('plantillas/header_view', $data).
-        view('Contenidos/comercializacion/comercializacion_view').view('plantillas/footer_view');
+        view('Contenidos/comercializacion_view').view('plantillas/footer_view');
     }
     public function contacto() {
         $data['titulo'] = "Contacto";
         return view('plantillas/header_view', $data).
-        view('Contenidos/comercializacion/contacto').view('plantillas/footer_view');
-    }
-
-    public function iniciarSesion() {
-        $data['titulo'] = "Iniciar Sesion";
-        return view('plantillas/header_view', $data).
-        view('Contenidos/iniciarSesion').view('plantillas/footer_view');
+        view('Contenidos/contacto_view').view('plantillas/footer_view');
     }
 }
