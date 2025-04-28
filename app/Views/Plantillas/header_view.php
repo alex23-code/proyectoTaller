@@ -25,6 +25,11 @@
                             <il class="nav-item"><a aria-current="page"  class="nav-link active" href="<?php echo base_url('Contacto'); ?>">Contacto</a></il>
                             <il class="nav-item"><a aria-current="page"  class="nav-link active" href="<?php echo base_url('Terminos'); ?>">Términos y Usos</a></il>
                         </ul>
+                        
+                        <button class="btn btn-outline-success botonIniciarSesion" type="submit" onclick="location.href='<?= base_url('IniciarSesion') ?>';">Iniciar Sesion</button>
+                        
+
+                        
                         <form class="d-flex" role="search">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Search</button>

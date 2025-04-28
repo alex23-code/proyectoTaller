@@ -24,4 +24,10 @@ class Home extends BaseController
         return view('plantillas/header_view', $data).
         view('Contenidos/comercializacion/contacto').view('plantillas/footer_view');
     }
+
+    public function iniciarSesion() {
+        $data['titulo'] = "Iniciar Sesion";
+        return view('plantillas/header_view', $data).
+        view('Contenidos/iniciarSesion').view('plantillas/footer_view');
+    }
 }
