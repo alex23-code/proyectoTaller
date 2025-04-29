@@ -27,13 +27,12 @@
                             </ul>
                         </div>
                          <div>
-                         <button class="menu-button botonIniciarSesion" type="submit" onclick="location.href='<?= base_url('IniciarSesion') ?>';">Iniciar Sesion</button>
                             <button id="menuButton1" class="menu-button"><i class="fa-solid fa-user"></i> Perfil</button>
                             <button id="menuButton2" class="menu-button"><i class="fa-solid fa-cart-shopping"></i> Carrito</button>
                             <div id="overlay" class="hidden"></div>
                             <div id="profileMenu" class="menu hidden">
                                 <h2>Perfil</h2>
-                                <p>Información del usuario.</p>
+                                <button class="btn btn-outline-success botonIniciarSesion" type="submit" onclick="location.href='<?= base_url('IniciarSesion') ?>';">Iniciar Sesion</button>
                                 <button id="closeButton1" class="close-button">Cerrar</button>
                             </div>
                             <div id="cartMenu" class="menu hidden">

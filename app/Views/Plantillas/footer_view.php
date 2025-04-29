@@ -9,7 +9,7 @@
                     <li><a href="<?php echo base_url('Nosotros'); ?>">Acerca de Nosotros</a></li>
                     <li><a href="<?php echo base_url('Contacto'); ?>">Sucursales</a></li>
                     <li><a href="<?php echo base_url('Contacto'); ?>">Contacto</a></li>
-                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="<?php echo base_url('Terminos'); ?>">Términos y Condiciones</a></li>
                 </ul>
             </div>
             <div class="col-md-4">
@@ -17,22 +17,18 @@
                 <ul >
                     <li><a href="<?php echo base_url('Comercializacion'); ?>">Medios de pago</a></li>
                     <li><a href="<?php echo base_url('Comercializacion'); ?>">Políticas de envío</a></li>
-                    <li><a href="#">Políticas de privacidad</a></li>
-                    <li><a href="#">Políticas de cambio y devolución</a></li>
-                    <li><a href="#">Cómo comprar</a></li>
-                    <li><a href="#">Guía de Talles</a></li>
+                    <li><a href="<?php echo base_url('Terminos'); ?>">Políticas de privacidad</a></li>
+                    <li><a href="<?php echo base_url('Comercializacion'); ?>">Garantia</a></li>
+                    <li><a href="<?php echo base_url('Comercializacion'); ?>">Guía de Talles</a></li>
                 </ul>
             </div>
             <div class="col-md-4">
-                <h5>AYUDA</h5>
+                <h5>CONTACTANOS</h5>
                 <ul>
                     <li>WP: Lun a Vie 8 a 17 | Sáb 9 a 13</li>
                     <li>Tel: 0800-777-6789</li>
-                    <li><a href="#">Cambios y devoluciones</a></li>
-                    <li><a href="#">Botón de Arrepentimiento</a></li>
-                    <li><a href="#">Gestión de Pedidos</a></li>
-                    <li><a href="#">Compra segura</a></li>
-                    <li><a href="#">Sugerencias y reclamos</a></li>
+                    <li><a href="<?php echo base_url('Contacto'); ?>">Medios de contacto</a></li>
+                    <li><a href="<?php echo base_url('Contacto'); ?>">Nuestra ubicacion</a></li>
                 </ul>
             </div>
         </div>

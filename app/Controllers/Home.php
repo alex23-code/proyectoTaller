@@ -24,13 +24,11 @@ class Home extends BaseController
         return view('plantillas/header_view', $data).
         view('Contenidos/contacto_view').view('plantillas/footer_view');
     }
-
     public function iniciarSesion() {
         $data['titulo'] = "Iniciar Sesion";
         return view('plantillas/header_view', $data).
         view('Contenidos/iniciarSesion').view('plantillas/footer_view');
     }
-
     public function terminos() {
         $data['titulo'] = "Terminos";
         return view('plantillas/header_view', $data).
