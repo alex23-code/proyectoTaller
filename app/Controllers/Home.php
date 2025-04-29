@@ -30,4 +30,10 @@ class Home extends BaseController
         return view('plantillas/header_view', $data).
         view('Contenidos/iniciarSesion').view('plantillas/footer_view');
     }
+
+    public function terminos() {
+        $data['titulo'] = "Terminos";
+        return view('plantillas/header_view', $data).
+        view('Contenidos/terminos').view('plantillas/footer_view');
+    }
 }
