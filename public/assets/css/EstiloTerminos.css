@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #f4f4f4;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start; 
+    width: 100%; 
+}
+
+header{
+    width: 100%;
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #28a745, #4bd960);
+    color: white;
+    font-size: 40px;
+  }
+
+.accordion-button:not(.collapsed) {
+    background-color:  rgb(209, 207, 207);
+    box-shadow: none;
+  }
+
+.accordion-content {
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.3s ease-out; 
+    background-color: #fff; 
+    padding: 0 15px; 
+}
+
+.accordion-item {
+    border-bottom: 1px solid #ddd;
+  }
+
+.accordion-mod{
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left; 
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+@media (max-width: 1000px) {
+    .accordion-mod {
+        max-width: 90%; /* Reduce el ancho en pantallas medianas */
+    }
+  
+    .accordion-header {
+        font-size: 16px; /* Reduce el tamaño de la cabecera */
+        padding: 10px; /* Espaciado más pequeño */
+    }
+  
+    .accordion-content {
+        font-size: 14px; /* Texto más pequeño */
+    }
+  }
+
+button:hover {
+    background-color: rgb(209, 207, 207); 
+  }
+
+.titulo{
+    text-align: center;
+    font-size: 50px;
+
+}
+
+.accordion-content {
+    display: none;
+    padding: 15px;
+}

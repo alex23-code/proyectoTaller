@@ -1,5 +1,5 @@
 .products {
-    width: 80%; /* Ocupa el 80% del ancho */
+    width: 80%; 
     padding: 15px;
 }
 
@@ -71,52 +71,50 @@
 
 .carousel {
     display: flex;
-    scroll-snap-type: x mandatory; /* Define el desplazamiento en bloques */
+    scroll-snap-type: x mandatory;
 }
 
 .carousel-item {
-    flex: 0 0 auto; /* Mantén todos los ítems en fila */
-    flex-direction: column; /* Organiza el contenido verticalmente */
-    justify-content: space-between; /* Espacia el contenido de forma uniforme */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+    flex: 0 0 auto; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-item h6 {
-    font-size: 16px; /* Tamaño predeterminado */
+    font-size: 16px; 
 }
 
 .carousel-item span{
-    font-size: 16px; /* Tamaño predeterminado */
+    font-size: 16px; 
 }
 
-/* Pantallas medianas */
 @media (max-width: 1000px) {
     .carousel-item h6 {
-        font-size: 14px; /* Reduce el tamaño para pantallas medianas */
+        font-size: 14px; 
     }
     .carousel-item span{
-        font-size: 14px; /* Tamaño predeterminado */
+        font-size: 14px; 
     }
     .caracteristicas {
         width: 120px;
     }
 }
 
-/* Pantallas pequeñas */
 @media (max-width: 480px) {
     .carousel-item h6 {
-        font-size: 12px; /* Tamaño más pequeño para pantallas pequeñas */
+        font-size: 12px; 
     }
     .carousel-item span{
-        font-size: 12px; /* Tamaño predeterminado */
+        font-size: 12px; 
     }
     
 }
 
 .carousel-item img {
-    max-width: 100%; /* Ajusta la imagen al contenedor */
-    height: auto; /* Mantiene proporciones */
+    max-width: 100%; 
+    height: auto;
 }
 
 .carousel-control-prev,

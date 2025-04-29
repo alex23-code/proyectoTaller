@@ -28,6 +28,13 @@ body{
   border-radius: 5px;
 }
 
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
 h1{
   text-align: center;
   font-size: 1.5rem;
@@ -36,6 +43,33 @@ h1{
 .accordion-button:not(.collapsed) {
   background-color:  rgb(209, 207, 207);
   box-shadow: none;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-content {
+  max-height: 0; 
+  overflow: hidden;
+  transition: max-height 0.3s ease-out; 
+  background-color: #fff; 
+  padding: 0 15px; 
+}
+
+@media (max-width: 1000px) {
+  .bloques {
+      max-width: 90%; /* Reduce el ancho en pantallas medianas */
+  }
+
+  .accordion-header {
+      font-size: 16px; /* Reduce el tamaño de la cabecera */
+      padding: 10px; /* Espaciado más pequeño */
+  }
+
+  .accordion-content {
+      font-size: 14px; /* Texto más pequeño */
+  }
 }
 
 .bloques {
