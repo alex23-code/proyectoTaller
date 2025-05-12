@@ -3,26 +3,26 @@
     <header>
         <h1>Contactanos</h1>
     </header>
-    <main class="pagina">
+    <main>
         <section class="contenido">
             <section class="datos-contacto">
-            <h4>Medios de contacto:</h4>
-            <i class="fa-solid fa-phone"></i>
-            <i class="subtitulo">Telefono de contacto: 3624546221</i><br>
-            <i class="fa-brands fa-whatsapp"></i>
-            <i class="subtitulo">Whatsapp: 3624772431</i><br>
-            <i class="fa-solid fa-square-envelope"></i>
-            <i class="subtitulo">Mail: </i>
-            <i class="subtitulo">forsport@gmail.com</i><br><br>
-            <h4>Estamos en:</h4>
-            <i class="fa-solid fa-location-dot"></i>
-            <i class="subtitulo">Güemes 434 - Corrientes - Corrientes</i> <br>
-            <i class="fa-solid fa-location-dot"></i> 
-            <i class="subtitulo">Av. Sarmiento 1342 - Resistencia - Chaco </i>
-            <p>Horario de Atención:</p>
-                <p>Lunes a Viernes: 8:00 a 20:00 hs 
-                Sábados: 9:00 a 12:00 hs
-            </p>
+                <h4>Medios de contacto:</h4>
+                <i class="fa-solid fa-phone"></i>
+                <i class="subtitulo">Telefono de contacto: 3624546221</i><br>
+                <i class="fa-brands fa-whatsapp"></i>
+                <i class="subtitulo">Whatsapp: 3624772431</i><br>
+                <i class="fa-solid fa-square-envelope"></i>
+                <i class="subtitulo">Mail: </i>
+                <i class="subtitulo">forsport@gmail.com</i><br><br>
+                <h4>Estamos en:</h4>
+                <i class="fa-solid fa-location-dot"></i>
+                <i class="subtitulo">Güemes 434 - Corrientes - Corrientes</i> <br>
+                <i class="fa-solid fa-location-dot"></i> 
+                <i class="subtitulo">Av. Sarmiento 1342 - Resistencia - Chaco </i><br><br>
+                <h4>Horario de Atención:</h4>
+                    <p class="subtitulo">Lunes a Viernes: 8:00 a 20:00 hs 
+                    <br>Sábados: 9:00 a 12:00 hs
+                </p>
             </section>
             <section class="form-register">
                 <h1 class="tituloFormulario">Formulario de Contacto Via E-Mail.</h1>
