@@ -127,5 +127,20 @@ h2 {
     line-height: 1.5;
 }
 
+@media (max-width: 650px) {
+    .vision-mission {
+        flex-direction: column;
+        align-items: center; 
+    }
+    .vision {
+        width: 100%;
+        text-align: center;
+    }
+    .mision {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 
 
