@@ -34,4 +34,9 @@ class Home extends BaseController
         return view('plantillas/header_view', $data).
         view('Contenidos/terminos').view('plantillas/footer_view');
     }
+    public function crearUsuario() {
+        $data['titulo'] = "Terminos";
+        return view('plantillas/header_view', $data).
+        view('Contenidos/crearUsuario_view').view('plantillas/footer_view');
+    }
 }
