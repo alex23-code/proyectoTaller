@@ -2,14 +2,16 @@
 namespace App\Models;
 use CodeIgniter\Model;
 
-class CategoriaModel extends Model{
+class ConsultasModel extends Model{
     protected $table      = 'consultas';
-    protected $primaryKey = 'NumPedido';
+    protected $primaryKey = 'idMensaje';
 
     protected $useAutoIncrement = true;
 
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['Nombre', 'Apellido', 'Mail', 'NumTelefono', 'Comentario', ''];
+    protected $allowedFields = ['Nombre', 'Correo', 'NumTelefono','Consulta'];
+
+    
 }

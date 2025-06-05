@@ -10,36 +10,38 @@ class Form extends BaseController
 
     public function index()
     {
-        if (! $this->request->is('post')) {
-            return view('signup');
+        $validation = \Config\Services :: validation();
+        $request = \Config\Services :: request();
+        $validation = service('validation');
+
+        if ($this->request->getMethod() !== 'post') {
+            return view('Contenidos/Principal_view');
         }
 
-        $rules = [
-            'password' => 'required|max_length[255]|min_length[10]',
-            'passconf' => 'required|max_length[255]|matches[password]',
-            'email'    => 'required|max_length[50]|valid_email',
-        ];
 
-        $signup_errors = [
-            'email' => [
-                'required' => 'You must choose a username.',
-            ],
-            'email' => [
-                'valid_email' => 'Please check the Email field. It does not appear to be valid.',
+        $validation->setRules([
+            "email"    => ["required" => "Este campo es obligatorio" ,
+            "max_length[50]" => "aasd"
+            "valid_email" => "La direccion de correo debe ser valida",
             ]
-        ];
+            'password' => ["required" => "Este campo es obligatorio",
+            "max_length[255]" => "asdasd",
+            "min_length[10]" => "llkl",
+            ]
+        ],);
 
-        $data = $this->request->getPost(array_keys($rules));
+        if ($validation -> withRequest($request)->run()) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            $data['validation'] = $validation -> getErrors();
+            return view("Plantillas/header_view", $data).view("Contenidos/Principal_view").view("Plantillas/footer");
+        }else{
+            // If you want to get the validated data.
+            $validData = $this->validator->getValidated();
 
-        if (! $this->validateData($data, $rules)) {
-            return view('iniciarSesion.php');
+            return view('Contenidos/success');
         }
-
-        // If you want to get the validated data.
-        $validData = $this->validator->getValidated();
-
-        return view('success');
     }
+}
 
     public function buscar_usuario(){
         $validation = \Config\Services :: validation();

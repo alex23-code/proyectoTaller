@@ -1,0 +1,159 @@
+DEBUG - 2025-06-01 01:18:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-01 01:19:04 --> ErrorException: Undefined array key 0
+[Method: POST, Route: contacto]
+in SYSTEMPATH\BaseModel.php on line 1594.
+ 1 SYSTEMPATH\BaseModel.php(1594): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\system\\BaseModel.php', 1594)
+ 2 SYSTEMPATH\BaseModel.php(1549): CodeIgniter\BaseModel->getValidationRules()
+ 3 SYSTEMPATH\BaseModel.php(808): CodeIgniter\BaseModel->validate([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\ConsultasController2.php(83): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultasController2->guarda()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultasController2))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-01 01:21:16 --> ErrorException: Undefined array key 0
+[Method: POST, Route: contacto]
+in SYSTEMPATH\BaseModel.php on line 1594.
+ 1 SYSTEMPATH\BaseModel.php(1594): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\system\\BaseModel.php', 1594)
+ 2 SYSTEMPATH\BaseModel.php(1549): CodeIgniter\BaseModel->getValidationRules()
+ 3 SYSTEMPATH\BaseModel.php(808): CodeIgniter\BaseModel->validate([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\ConsultasController2.php(83): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultasController2->guarda()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultasController2))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-01 01:23:51 --> ErrorException: Undefined array key 0
+[Method: POST, Route: contacto]
+in SYSTEMPATH\BaseModel.php on line 1594.
+ 1 SYSTEMPATH\BaseModel.php(1594): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\system\\BaseModel.php', 1594)
+ 2 SYSTEMPATH\BaseModel.php(1549): CodeIgniter\BaseModel->getValidationRules()
+ 3 SYSTEMPATH\BaseModel.php(808): CodeIgniter\BaseModel->validate([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\ConsultasController2.php(83): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultasController2->formContacto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultasController2))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-01 01:25:49 --> ErrorException: Undefined array key 0
+[Method: POST, Route: contacto]
+in SYSTEMPATH\BaseModel.php on line 1594.
+ 1 SYSTEMPATH\BaseModel.php(1594): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\system\\BaseModel.php', 1594)
+ 2 SYSTEMPATH\BaseModel.php(1549): CodeIgniter\BaseModel->getValidationRules()
+ 3 SYSTEMPATH\BaseModel.php(808): CodeIgniter\BaseModel->validate([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\ConsultasController2.php(77): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultasController2->formContacto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultasController2))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-01 01:26:15 --> ErrorException: Undefined array key 0
+[Method: POST, Route: contacto]
+in SYSTEMPATH\BaseModel.php on line 1594.
+ 1 SYSTEMPATH\BaseModel.php(1594): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\system\\BaseModel.php', 1594)
+ 2 SYSTEMPATH\BaseModel.php(1549): CodeIgniter\BaseModel->getValidationRules()
+ 3 SYSTEMPATH\BaseModel.php(808): CodeIgniter\BaseModel->validate([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\ConsultasController2.php(77): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultasController2->formContacto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultasController2))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-01 01:26:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-01 01:26:25 --> ErrorException: Undefined array key 0
+[Method: POST, Route: contacto]
+in SYSTEMPATH\BaseModel.php on line 1594.
+ 1 SYSTEMPATH\BaseModel.php(1594): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\system\\BaseModel.php', 1594)
+ 2 SYSTEMPATH\BaseModel.php(1549): CodeIgniter\BaseModel->getValidationRules()
+ 3 SYSTEMPATH\BaseModel.php(808): CodeIgniter\BaseModel->validate([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\ConsultasController2.php(77): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultasController2->formContacto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultasController2))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-01 16:52:38 --> ErrorException: Undefined array key 0
+[Method: POST, Route: contacto]
+in SYSTEMPATH\BaseModel.php on line 1594.
+ 1 SYSTEMPATH\BaseModel.php(1594): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\system\\BaseModel.php', 1594)
+ 2 SYSTEMPATH\BaseModel.php(1549): CodeIgniter\BaseModel->getValidationRules()
+ 3 SYSTEMPATH\BaseModel.php(808): CodeIgniter\BaseModel->validate([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\ConsultasController2.php(83): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultasController2->formContacto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultasController2))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-01 17:02:24 --> ParseError: syntax error, unexpected single-quoted string "nroPedido", expecting "]"
+[Method: POST, Route: contacto]
+in APPPATH\Controllers\ConsultasController2.php on line 63.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Controllers\\ConsultasController2.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ConsultasController2')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ConsultasController2')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\ConsultasController2', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-01 17:02:56 --> ErrorException: Undefined array key 0
+[Method: POST, Route: contacto]
+in SYSTEMPATH\BaseModel.php on line 1594.
+ 1 SYSTEMPATH\BaseModel.php(1594): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\system\\BaseModel.php', 1594)
+ 2 SYSTEMPATH\BaseModel.php(1549): CodeIgniter\BaseModel->getValidationRules()
+ 3 SYSTEMPATH\BaseModel.php(808): CodeIgniter\BaseModel->validate([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\ConsultasController2.php(87): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultasController2->formContacto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultasController2))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-01 17:03:33 --> ErrorException: Undefined variable $request
+[Method: POST, Route: contacto]
+in APPPATH\Controllers\ConsultasController2.php on line 76.
+ 1 APPPATH\Controllers\ConsultasController2.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $request', 'C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Controllers\\ConsultasController2.php', 76)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultasController2->formContacto()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultasController2))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-01 19:03:39 --> Error: Class "App\Controllers\Config\Services" not found
+[Method: POST, Route: contacto]
+in APPPATH\Controllers\ConsultasController2.php on line 37.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultasController2->formContacto()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultasController2))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-01 19:04:01 --> ErrorException: Undefined array key 0
+[Method: POST, Route: contacto]
+in SYSTEMPATH\BaseModel.php on line 1594.
+ 1 SYSTEMPATH\BaseModel.php(1594): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\system\\BaseModel.php', 1594)
+ 2 SYSTEMPATH\BaseModel.php(1549): CodeIgniter\BaseModel->getValidationRules()
+ 3 SYSTEMPATH\BaseModel.php(808): CodeIgniter\BaseModel->validate([...])
+ 4 SYSTEMPATH\Model.php(800): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\ConsultasController2.php(87): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ConsultasController2->formContacto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ConsultasController2))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
