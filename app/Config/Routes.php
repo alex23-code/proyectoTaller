@@ -9,17 +9,16 @@ $routes->get('/', 'Home::index');
 $routes->get('Nosotros', 'Home::somos');
 $routes->get('Comercializacion', 'Home::comercializacion');
 $routes->get('Contacto', 'Home::contacto');
-$routes->get('IniciarSesion', 'Home::IniciarSesion');
+$routes->get('Iniciar_Sesion', 'Home::IniciarSesion');
 $routes->get('Terminos', 'Home::terminos');
 $routes->get('CrearUsuario', 'Home::crearUsuario');
 
 
-$routes->get('form', 'Usuarios_controller::index');
-$routes->post('form', 'Usuarios_controller::Buscar_usuario');
-$routes->post('registrarUsuario', 'Usuarios_controller::add_cliente');
-$routes->post('iniciar_sesion', 'Usuarios_controller::index');
+$routes->post('iniciar', 'Usuarios_controller::inicio');
+$routes->post('Buscar', 'Usuarios_controller::buscar_usuario');
+$routes->post('registro', 'Usuarios_controller::add_cliente');
+$routes->get('Cerrar', 'Usuarios_controller::cerrar_sesion');
+$routes->get('user_admin', 'Usuarios_controller::admin');
 
 
-$routes->post('consultas', 'Consultas_controller::addConsulta');
-
-$routes->post('contacto', 'ConsultasController2::formContacto');
+$routes->post('contacto', 'Consultas_controller::formContacto');
