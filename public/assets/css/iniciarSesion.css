@@ -16,7 +16,7 @@ main {
 
 .formulario {
     margin-bottom: 50px;
-    margin-top: 10px;
+    margin-top: 65px;
     width: 35%;
     position: relative;
     top: 50%;
@@ -44,4 +44,21 @@ main {
 
 .registrar a:hover{
     text-decoration: underline;
+}
+
+.alert-danger{
+    max-height: 165px;
+}
+.alert::before{
+    color: red;
+    content: "• ";
+}
+.alert{
+    color: red;
+    max-height: 40px;
+    display: inline-block;
+    width: auto;
+    font-size: 14px;
+    margin: 0px;
+    padding: 0;
 }
