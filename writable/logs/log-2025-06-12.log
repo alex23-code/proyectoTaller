@@ -1,0 +1,213 @@
+DEBUG - 2025-06-12 01:08:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-12 01:09:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-12 01:09:46 --> Error: Class "App\Controllers\Categoria_Model" not found
+[Method: POST, Route: insertar_producto]
+in APPPATH\Controllers\ProductosController.php on line 95.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->registrar_producto()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-12 01:11:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-12 01:11:58 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "plantillas/encabezado.php"
+[Method: POST, Route: insertar_producto]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('plantillas/encabezado.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('plantillas/encabezado', [], true)
+ 3 APPPATH\Controllers\ProductosController.php(100): view('plantillas/encabezado', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->registrar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-12 01:16:45 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "plantillas/encabezado.php"
+[Method: POST, Route: insertar_producto]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('plantillas/encabezado.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('plantillas/encabezado', [], true)
+ 3 APPPATH\Controllers\ProductosController.php(100): view('plantillas/encabezado', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->registrar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-12 01:18:34 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Backend/navegar_admin_view.php"
+[Method: POST, Route: insertar_producto]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Backend/navegar_admin_view.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Backend/navegar_admin_view', [], true)
+ 3 APPPATH\Controllers\ProductosController.php(100): view('Backend/navegar_admin_view')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->registrar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-12 01:19:12 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Backend/Productos/agregar_productos_view.php"
+[Method: POST, Route: insertar_producto]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Backend/Productos/agregar_productos_view.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Backend/Productos/agregar_productos_view', [], true)
+ 3 APPPATH\Controllers\ProductosController.php(100): view('Backend/Productos/agregar_productos_view')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->registrar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-12 01:19:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-12 01:19:46 --> ErrorException: Undefined variable $marcas
+[Method: POST, Route: insertar_producto]
+in APPPATH\Views\agregar_productos_view.php on line 58.
+ 1 APPPATH\Views\agregar_productos_view.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $marcas', 'C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Views\\agregar_productos_view.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Views\\agregar_productos_view.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('agregar_productos_view', [], true)
+ 5 APPPATH\Controllers\ProductosController.php(100): view('agregar_productos_view')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->registrar_producto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-12 01:30:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-12 01:30:21 --> ErrorException: Undefined variable $marca
+[Method: POST, Route: insertar_producto]
+in APPPATH\Views\agregar_productos_view.php on line 58.
+ 1 APPPATH\Views\agregar_productos_view.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $marca', 'C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Views\\agregar_productos_view.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Views\\agregar_productos_view.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('agregar_productos_view', [], true)
+ 5 APPPATH\Controllers\ProductosController.php(100): view('agregar_productos_view')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->registrar_producto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-12 01:30:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-12 01:30:36 --> ErrorException: Undefined variable $marcas
+[Method: POST, Route: insertar_producto]
+in APPPATH\Views\agregar_productos_view.php on line 58.
+ 1 APPPATH\Views\agregar_productos_view.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $marcas', 'C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Views\\agregar_productos_view.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Views\\agregar_productos_view.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('agregar_productos_view', [], true)
+ 5 APPPATH\Controllers\ProductosController.php(100): view('agregar_productos_view')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->registrar_producto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-12 01:36:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-12 01:36:28 --> ErrorException: Undefined variable $marcas
+[Method: POST, Route: insertar_producto]
+in APPPATH\Views\agregar_productos_view.php on line 58.
+ 1 APPPATH\Views\agregar_productos_view.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $marcas', 'C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Views\\agregar_productos_view.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Views\\agregar_productos_view.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('agregar_productos_view', [], true)
+ 5 APPPATH\Controllers\ProductosController.php(100): view('agregar_productos_view')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->registrar_producto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-12 01:37:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-12 01:37:19 --> ErrorException: Undefined variable $data
+[Method: POST, Route: insertar_producto]
+in APPPATH\Views\agregar_productos_view.php on line 58.
+ 1 APPPATH\Views\agregar_productos_view.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Views\\agregar_productos_view.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Views\\agregar_productos_view.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('agregar_productos_view', [], true)
+ 5 APPPATH\Controllers\ProductosController.php(100): view('agregar_productos_view')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->registrar_producto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-12 01:53:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-12 01:53:14 --> ErrorException: Undefined variable $data
+[Method: POST, Route: insertar_producto]
+in APPPATH\Views\agregar_productos_view.php on line 58.
+ 1 APPPATH\Views\agregar_productos_view.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Views\\agregar_productos_view.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Views\\agregar_productos_view.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('agregar_productos_view', [], true)
+ 5 APPPATH\Controllers\ProductosController.php(100): view('agregar_productos_view')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->registrar_producto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-12 01:53:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-12 01:53:47 --> ErrorException: Undefined variable $data
+[Method: POST, Route: insertar_producto]
+in APPPATH\Views\agregar_productos_view.php on line 58.
+ 1 APPPATH\Views\agregar_productos_view.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Views\\agregar_productos_view.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Views\\agregar_productos_view.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('agregar_productos_view', [], true)
+ 5 APPPATH\Controllers\ProductosController.php(100): view('agregar_productos_view')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->registrar_producto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-12 01:54:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-12 01:54:39 --> ErrorException: Undefined variable $marcas
+[Method: POST, Route: insertar_producto]
+in APPPATH\Views\agregar_productos_view.php on line 58.
+ 1 APPPATH\Views\agregar_productos_view.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $marcas', 'C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Views\\agregar_productos_view.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Views\\agregar_productos_view.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('agregar_productos_view', [], true)
+ 5 APPPATH\Controllers\ProductosController.php(100): view('agregar_productos_view')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->registrar_producto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-12 02:00:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-12 02:00:34 --> ErrorException: Undefined variable $marcas
+[Method: POST, Route: insertar_producto]
+in APPPATH\Views\agregar_productos_view.php on line 58.
+ 1 APPPATH\Views\agregar_productos_view.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $marcas', 'C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Views\\agregar_productos_view.php', 58)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Views\\agregar_productos_view.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('agregar_productos_view', [], true)
+ 5 APPPATH\Controllers\ProductosController.php(100): view('agregar_productos_view')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->registrar_producto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-12 02:07:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-06-12 02:07:12 --> ErrorException: Undefined array key "id_talle"
+[Method: POST, Route: insertar_producto]
+in APPPATH\Views\agregar_productos_view.php on line 72.
+ 1 APPPATH\Views\agregar_productos_view.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id_talle"', 'C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Views\\agregar_productos_view.php', 72)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Views\\agregar_productos_view.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('agregar_productos_view', [], true)
+ 5 APPPATH\Controllers\ProductosController.php(104): view('agregar_productos_view')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->registrar_producto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-12 02:11:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-12 02:11:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-12 02:11:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

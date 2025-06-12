@@ -23,3 +23,7 @@ $routes->post('iniciar_sesion', 'Usuarios_controller::index');
 $routes->post('consultas', 'Consultas_controller::addConsulta');
 
 $routes->post('contacto', 'ConsultasController2::formContacto');
+
+
+$routes->get('agregar', 'ProductosController::agregar_producto');          // Add this line.
+$routes->post('insertar_producto', 'ProductosController::registrar_producto'); // Add this line.

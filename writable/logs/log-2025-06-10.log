@@ -1,0 +1,234 @@
+CRITICAL - 2025-06-10 13:13:33 --> ParseError: syntax error, unexpected token "public", expecting end of file
+[Method: GET, Route: agregar]
+in APPPATH\Controllers\ProductosController.php on line 21.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Controllers\\ProductosController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ProductosController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ProductosController')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\ProductosController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 13:59:44 --> ParseError: syntax error, unexpected token "public", expecting end of file
+[Method: GET, Route: agregar]
+in APPPATH\Controllers\ProductosController.php on line 21.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Controllers\\ProductosController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ProductosController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ProductosController')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\ProductosController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 14:04:46 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "plantillas/navegar_admin_view.php"
+[Method: GET, Route: agregar]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('plantillas/navegar_admin_view.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('plantillas/navegar_admin_view', [], true)
+ 3 APPPATH\Controllers\ProductosController.php(17): view('plantillas/navegar_admin_view')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->agregar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 14:10:29 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "plantillas/navegar_admin_view.php"
+[Method: GET, Route: agregar]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('plantillas/navegar_admin_view.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('plantillas/navegar_admin_view', [], true)
+ 3 APPPATH\Controllers\ProductosController.php(17): view('plantillas/navegar_admin_view')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->agregar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 14:11:46 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "plantillas/navegar_admin_view.php"
+[Method: GET, Route: agregar]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('plantillas/navegar_admin_view.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('plantillas/navegar_admin_view', [], true)
+ 3 APPPATH\Controllers\ProductosController.php(17): view('plantillas/navegar_admin_view')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->agregar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 14:11:50 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "plantillas/navegar_admin_view.php"
+[Method: GET, Route: agregar]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('plantillas/navegar_admin_view.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('plantillas/navegar_admin_view', [], true)
+ 3 APPPATH\Controllers\ProductosController.php(17): view('plantillas/navegar_admin_view')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->agregar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 14:12:32 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "views/navegar_admin_view.php"
+[Method: GET, Route: agregar]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('views/navegar_admin_view.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('views/navegar_admin_view', [], true)
+ 3 APPPATH\Controllers\ProductosController.php(17): view('views/navegar_admin_view')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->agregar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 14:14:21 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "views\navegar_admin_view.php"
+[Method: GET, Route: agregar]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('views\\navegar_admin_view.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('views\\navegar_admin_view', [], true)
+ 3 APPPATH\Controllers\ProductosController.php(17): view('views\\navegar_admin_view')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->agregar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 14:15:03 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "views\plantillas\nav_view.php"
+[Method: GET, Route: agregar]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('views\\plantillas\\nav_view.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('views\\plantillas\\nav_view', [], true)
+ 3 APPPATH\Controllers\ProductosController.php(17): view('views\\plantillas\\nav_view')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->agregar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 14:15:34 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "views\plantillas\nav_view.php"
+[Method: GET, Route: agregar]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('views\\plantillas\\nav_view.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('views\\plantillas\\nav_view', [], true)
+ 3 APPPATH\Controllers\ProductosController.php(17): view('views\\plantillas\\nav_view')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->agregar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 14:15:43 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "views\navegar_admin_view.php"
+[Method: GET, Route: agregar]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('views\\navegar_admin_view.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('views\\navegar_admin_view', [], true)
+ 3 APPPATH\Controllers\ProductosController.php(17): view('views\\navegar_admin_view')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->agregar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 14:16:05 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "views\navegar_admin_view.php"
+[Method: GET, Route: agregar]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('views\\navegar_admin_view.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('views\\navegar_admin_view', [], true)
+ 3 APPPATH\Controllers\ProductosController.php(16): view('views\\navegar_admin_view')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->agregar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 14:16:13 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "views\navegar_admin_view.php"
+[Method: GET, Route: agregar]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('views\\navegar_admin_view.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('views\\navegar_admin_view', [], true)
+ 3 APPPATH\Controllers\ProductosController.php(16): view('views\\navegar_admin_view')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->agregar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 14:16:35 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Backend\Productos\agregar_productos_view.php"
+[Method: GET, Route: agregar]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Backend\\Productos\\agregar_productos_view.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Backend\\Productos\\agregar_productos_view', [], true)
+ 3 APPPATH\Controllers\ProductosController.php(16): view('Backend\\Productos\\agregar_productos_view')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->agregar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 14:17:23 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "app\backend\productos\agregar_productos_view.php"
+[Method: GET, Route: agregar]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('app\\backend\\productos\\agregar_productos_view.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('app\\backend\\productos\\agregar_productos_view', [], true)
+ 3 APPPATH\Controllers\ProductosController.php(16): view('app\\backend\\productos\\agregar_productos_view')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->agregar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 14:17:38 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "backend\productos\agregar_productos_view.php"
+[Method: GET, Route: agregar]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('backend\\productos\\agregar_productos_view.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('backend\\productos\\agregar_productos_view', [], true)
+ 3 APPPATH\Controllers\ProductosController.php(16): view('backend\\productos\\agregar_productos_view')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->agregar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 14:21:07 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "C:\xampp\htdocs\Proyecto_Alex_Altamirano\app\Backend\productos\agregar_productos_view.php"
+[Method: GET, Route: agregar]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Backend\\productos\\agregar_productos_view.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Backend\\productos\\agregar_productos_view', [], true)
+ 3 APPPATH\Controllers\ProductosController.php(16): view('C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\Backend\\productos\\agregar_productos_view')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->agregar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 14:22:32 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "C:\xampp\htdocs\Proyecto_Alex_Altamirano\app\backend\productos\agregar_productos_view.php"
+[Method: GET, Route: agregar]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\backend\\productos\\agregar_productos_view.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\backend\\productos\\agregar_productos_view', [], true)
+ 3 APPPATH\Controllers\ProductosController.php(16): view('C:\\xampp\\htdocs\\Proyecto_Alex_Altamirano\\app\\backend\\productos\\agregar_productos_view')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->agregar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-10 14:24:06 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Proyecto_Alex_Altamirano\app\backend\productos\agregar_productos_view.php"
+[Method: GET, Route: agregar]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Proyecto_Alex_Altamirano\\app\\backend\\productos\\agregar_productos_view.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Proyecto_Alex_Altamirano\\app\\backend\\productos\\agregar_productos_view', [], true)
+ 3 APPPATH\Controllers\ProductosController.php(16): view('Proyecto_Alex_Altamirano\\app\\backend\\productos\\agregar_productos_view')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProductosController->agregar_producto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProductosController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-06-10 14:25:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 14:30:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 14:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 14:34:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 14:38:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-06-10 14:44:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

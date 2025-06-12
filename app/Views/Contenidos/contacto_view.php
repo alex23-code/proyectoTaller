@@ -1,6 +1,6 @@
 <body>
     
-    <?= validation_list_errors() ?>
+    
 
     
 
@@ -39,6 +39,7 @@
             </section>
            
             <section class="form-register">
+                <?= validation_list_errors() ?>
                 <?= form_open('contacto') ?>
                 <h1 class="tituloFormulario">Formulario de Contacto Via E-Mail.</h1>
                 <div class="mb3">
