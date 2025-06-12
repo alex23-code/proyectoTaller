@@ -27,7 +27,7 @@ class Home extends BaseController
     public function iniciarSesion() {
         $data['titulo'] = "Iniciar Sesion";
         return view('plantillas/header_view', $data).
-        view('Contenidos/iniciarSesion').view('plantillas/footer_view');
+        view('Contenidos/iniciarSesion_view').view('plantillas/footer_view');
     }
     public function terminos() {
         $data['titulo'] = "Terminos";

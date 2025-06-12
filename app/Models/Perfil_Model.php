@@ -4,19 +4,18 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Usuarios_Model extends Model
+class Perfil_Model extends Model
 {
-    protected $table      = 'personas';
-    protected $primaryKey = 'persona_id';
+    protected $table      = 'perfil_id';
+    protected $primaryKey = 'id';
 
     protected $useAutoIncrement = true;
 
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['persona_apellido', 'persona_nombre', 'persona_telefono',
-    'persona_email', 'persona_password', 'perfil_id', 'persona_estado'];
-    
+    protected $allowedFields = ['comentario'];
+
     protected $useTimestamps = false;
     protected $createdField = '';
     protected $updatedField = '';

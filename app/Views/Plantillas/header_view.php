@@ -4,9 +4,7 @@
         <meta charset = "utf-8">  
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity=" " crossorigin="">
-        
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> 
-        <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">-->
         <link href="assets/css/miEstilo.css" rel="stylesheet">
         <title>Forsport</title>
         <section> 
@@ -32,14 +30,22 @@
                             <div id="overlay" class="hidden"></div>
                             <div id="profileMenu" class="menu hidden">
                                 <h2>Perfil</h2>
-                                <button class="btn btn-outline-success botonIniciarSesion" type="submit" onclick="location.href='<?= base_url('IniciarSesion') ?>';">Iniciar Sesion</button>
+                                <?php if(session('login')){ ?>
+                                    <button class="cerrarSesion" onclick="window.location.href='<?= base_url('Cerrar') ?>'">Cerrar sesión</button>
+                                <?php }else{ ?>
+                                    <button class="btn btn-outline-success botonIniciarSesion" type="submit" onclick="location.href='<?= base_url('Iniciar_Sesion') ?>';">Iniciar Sesion</button>
+                                <?php } ?>
                                 <button id="closeButton1" class="close-button">Cerrar</button>
                             </div>
                             <div id="cartMenu" class="menu hidden">
                                 <h2 id="cartTitle">Carrito de Compras</h2>
+                                <?php if(session('login')){ ?>
                                 <div id="cartItems">
                                 </div>
-                                <button id="closeButton2" class="close-button">Cerrar</button>
+                                <?php }else{ ?>
+                                    <button class="btn btn-outline-success botonIniciarSesion" type="submit" onclick="location.href='<?= base_url('Iniciar_Sesion') ?>';">Iniciar Sesion</button>
+                                <?php } ?>
+                                    <button id="closeButton2" class="close-button">Cerrar</button>
                             </div>
                         </div>
                         <script>

@@ -98,7 +98,7 @@ footer p {
 }
 
 .botonIniciarSesion{
-    margin-right: 10px;
+    margin: 10px;
 }
 
 .menu {
@@ -136,6 +136,20 @@ footer p {
     display: block;
 }
 
+.cerrarSesion{
+    padding: 10px;
+    color: red;
+    background-color: white;
+    border: 1px solid red;
+    border-radius: 8px;
+}
+
+.cerrarSesion:hover{
+    background-color: #cc0000;
+    color: white;
+    border-color: #cc0000;
+}
+
 .close-button {
     padding: 10px;
     background-color: #ff4d4d;
@@ -144,6 +158,9 @@ footer p {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
+    position: absolute;
+    bottom: 15px;
+    left: 30px;
 }
 
 .close-button:hover {
