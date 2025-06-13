@@ -12,8 +12,8 @@ class ProductosModel extends Model
     protected $useAutoIncrement = true;
 
     protected $returnType     = 'array';
-    protected $useSoftDeletes = 'false';
+    protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['id_marca', 'precio', 'stock', 
-    'estado', 'id_categoria', 'talla', 'descripcion'];
+    protected $allowedFields = ['id_marca', 'precio', 'stock', 'producto_imagen',
+    'estado', 'id_categoria', 'id_tipo','id_talle', 'descripcion'];
 }
