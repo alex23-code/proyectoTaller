@@ -39,4 +39,16 @@ class Home extends BaseController
         return view('plantillas/header_view', $data).
         view('Contenidos/crearUsuario_view').view('plantillas/footer_view');
     }
+
+
+    public function listarVentas() {
+        $data['titulo'] = "Lista de ventas";
+        return view('Plantillas/adminNav_view', $data).
+        view('Backend/listarVentas_view').view('Plantillas/footer_view');
+    }
+    public function gestionarProductos() {
+        $data['titulo'] = "Gestion de productos";
+        return view('Plantillas/adminNav_view', $data).
+        view('Backend/gestionarProductos_view').view('Plantillas/footer_view');
+    }
 }

@@ -10,8 +10,6 @@ class Usuarios_controller extends BaseController
 {
 
 
-
-    
     public function inicio(){
         $validation = \Config\Services::validation();
         $request = \Config\Services::request();
@@ -62,11 +60,9 @@ class Usuarios_controller extends BaseController
             $session->set($data);
             switch ($user['perfil_id']) {
                 case '1':
-                    return redirect()->route('user_admin');
-                    break;
+                    return view("Plantillas/nav_view").view("Contenidos/principal_view").view("Plantillas/footer_view");
                 case '2':
                     return redirect()->route('/');
-                    break;
             }
         } else {
             $validation->setError('log', 'Usuario y/o contraseña incorrecto!');
@@ -80,6 +76,11 @@ class Usuarios_controller extends BaseController
 
 
 
+    public function cerrar_sesion(){
+        $session = session();
+        $session->destroy();
+        return redirect()->to(base_url());
+}
 
     
     public function add_cliente() {
@@ -128,8 +129,8 @@ class Usuarios_controller extends BaseController
 
         if ($validation->withRequest($request)->run() ){
             $data = [
-                'persona_apellido' => $request->getPost('apellido'),
-                'persona_nombre' => $request->getPost('nombre'),
+                'persona_apellido' => ucwords(strtolower($request->getPost('apellido'))),
+                'persona_nombre' => ucwords(strtolower($request->getPost('nombre'))),
                 'persona_email' => $request->getPost('email'),
                 'persona_password' => password_hash($request->getPost('password'), PASSWORD_BCRYPT),
                 'perfil_id' => 2,
@@ -148,11 +149,55 @@ class Usuarios_controller extends BaseController
         }
     }
 
-    public function cerrar_sesion(){
+
+
+
+    public function editar_usuario(){
+        $validation = \Config\Services::validation();
+        $request = \Config\Services::request();
         $session = session();
-        $session->destroy();
-        return redirect()->to(base_url());
-}
+
+        $validation->setRules([
+            "nombre" => [
+                "rules" => 'required',
+                "errors" => [
+                    "required" => "Ingresa un nombre",
+                ]
+            ],
+            "apellido" => [
+                "rules" => 'required',
+                "errors" => [
+                    "required" => "Ingresa un apellido",
+                ]
+            ],
+        ]);
+        
+        $User_Model = new Usuarios_Model();
+
+        $id = session()->get('id');
+
+        $data = [
+            'persona_nombre' => ucwords(strtolower($request->getPost('nombre'))),
+            'persona_apellido' => ucwords(strtolower($request->getPost('apellido')))
+        ];
+
+        session()->set([
+            'id' => $id,
+            'nombre' => $data['persona_nombre'],
+            'apellido' => $data['persona_apellido'],
+            'perfil' => session()->get('perfil'), 
+            'login' => TRUE
+        ]);
+
+        if ($User_Model->update($id, $data)) {
+            return redirect()->to(base_url())->with('success', 'Usuario actualizado correctamente.');
+        } else {
+            return redirect()->back()->with('error', 'Hubo un problema al actualizar los datos.');
+        }
+
+    }
+
+
 
     public function admin(){
         $data['titulo'] = 'Index';
