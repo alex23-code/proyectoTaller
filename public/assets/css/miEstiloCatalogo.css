@@ -1,0 +1,102 @@
+
+.container-fluid {
+    max-width: none;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.product-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    padding: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-card > * {
+    max-width: 400px;
+}
+
+.product-card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+}
+
+/* Imagen del producto */
+.product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Precio */
+.product-card p {
+    font-size: 1.2rem;
+    color: #27ae60;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+/* Descripción */
+.product-card h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+/* Cuotas */
+.product-card span {
+    font-size: 0.85rem;
+    color: #555;
+    text-align: center;
+}
+
+/* Botón Comprar */
+.product-card button.btn {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.product-card button.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Características */
+.product-card .caracteristicas {
+    margin-top: 12px;
+    width: 100%;
+    text-align: left;
+}
+
+.product-card .caracteristicas ul {
+    padding-left: 18px;
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.product-card .caracteristicas li {
+    line-height: 1.4;
+    color: #333;
+}
+
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  max-width: 1300px; /* Ajustá esto según el ancho deseado */
+  margin: 0 auto;
+  gap: 20px;
+}
+
