@@ -1,6 +1,14 @@
 <!DOCTYPE html> 
 <html>  
     <body> 
+<!-- muestra errores de configuracion del usuario -->
+        <?php if(session()->get('error')): ?>
+            <div id="alerta" class="alerta">
+                <h6>Hubo un error</h6>
+                <span><?= implode('<br>', session('error')); ?></span>
+                <button onclick="cerrarAlerta()" class="cerrar-alerta">&times;</button>
+            </div>
+        <?php endif; ?>
         <link href="assets/css/EstiloPrincipal.css" rel="stylesheet">
         <!-- carrousel -->
         <section class="Container-fluid">
@@ -437,7 +445,7 @@
                                     <button class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i></button>
                                     <div class="caracteristicas">
                                         <ul>
-                                            <li>Marca: adidas</li>
+                                            <li>Marca: Under Armour</li>
                                             <li>Género: Hombre</li>
                                         </ul>
                                     </div>
@@ -453,7 +461,7 @@
                                     <button class="btn btn-primary"><i class="fa-solid fa-cart-shopping"></i></button>
                                     <div class="caracteristicas">
                                         <ul>
-                                            <li>Marca: Topper</li>
+                                            <li>Marca: adidas</li>
                                             <li>Género: Hombre</li>
                                         </ul>
                                     </div>
@@ -934,103 +942,103 @@
         </section>   
         <script>
             document.addEventListener("DOMContentLoaded", () => {
-            let carrito = []; 
+                let carrito = [];
 
-            
-            function actualizarCarrito() {
-                const cartItemsContainer = document.getElementById("cartItems");
-                cartItemsContainer.innerHTML = ""; 
-                if (carrito.length === 0) {
-                    cartItemsContainer.innerHTML = `
-                        <div style="text-align: center; color: #6c757d; margin-top: 20px; font-size: 16px;">
-                            Tu carrito está vacío. Agrega productos para comenzar.
-                        </div>
-                    `;
-                    console.log("Carrito está vacío."); 
-                    return;
-                }
-                carrito.forEach((producto, index) => {
-                    const item = document.createElement("div");
-                    item.classList.add("cart-item");
-                    item.innerHTML = `
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
-                            <img src="${producto.imagen}" alt="${producto.nombre}" style="width: 40px; height: 40px; margin-right: 10px; border-radius: 5px;">
-                            <div>
-                                <p style="font-size: 14px; margin: 0;"><strong>${producto.nombre}</strong></p>
-                                <p style="font-size: 14px; margin: 0;">${producto.precio}</p>
-                                <label for="talle-${index}" style="font-size: 12px;">Talle:</label>
-                                <select id="talle-${index}" class="select-talle" style="padding: 3px; margin-top: 5px; font-size: 12px;">
-                                    ${producto.talles
-                                        .map((talle) => `<option value="${talle}">${talle}</option>`)
-                                        .join("")}
-                                </select>
-                            </div>
-                            <button class="btn-remove" style="background-color: #f44336; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">
-                                Remover
-                            </button>
-                        </div>
-                    `;
-                    cartItemsContainer.appendChild(item);
-                    const btnRemove = item.querySelector(".btn-remove");
-                    btnRemove.addEventListener("click", () => {
-                        carrito.splice(index, 1); 
-                        actualizarCarrito();
-                    });                    
-                    const selectTalle = item.querySelector(`#talle-${index}`);
-                    selectTalle.addEventListener("change", (e) => {
-                        producto.talleSeleccionado = e.target.value;
-                        console.log(`Talle seleccionado para ${producto.nombre}: ${producto.talleSeleccionado}`); 
-                    });
-                });
-                console.log("Carrito actualizado:", carrito); 
-            }           
-            function abrirCarrito() {
-                const cartMenu = document.getElementById("cartMenu");
-                cartMenu.style.display = "block"; 
-                actualizarCarrito(); 
-            }    
-            const openCartButton = document.getElementById("menuButton2"); 
-            openCartButton.addEventListener("click", abrirCarrito);
-            const botonesAgregar = document.querySelectorAll(".btn.btn-primary");
-            if (botonesAgregar.length === 0) {
-                console.error("No se encontraron botones con la clase .btn.btn-primary.");
-                return;
-            }
-            botonesAgregar.forEach((boton) => {
-                boton.addEventListener("click", (e) => {
-                    const productoElement = e.target.closest(".product-card");
+                // Actualiza el contenido visual del carrito
+                function actualizarCarrito() {
+                    const cartItemsContainer = document.getElementById("cartItems");
+                    const contador = document.getElementById("cartCount"); // opcional
+                    cartItemsContainer.innerHTML = "";
 
-                    if (!productoElement) {
-                        console.error("No se pudo encontrar el contenedor del producto.");
+                    if (carrito.length === 0) {
+                        cartItemsContainer.innerHTML = `
+                            <div style="text-align: center; color: #6c757d; margin-top: 20px; font-size: 16px;">
+                                Tu carrito está vacío. Agrega productos para comenzar.
+                            </div>`;
+                        if (contador) contador.textContent = "0";
                         return;
                     }
-                    const id = productoElement.getAttribute("data-id");
-                    const nombre = productoElement.querySelector("h6")?.textContent.trim() || "Sin nombre";
-                    const precio = productoElement.querySelector("p")?.textContent.trim() || "Sin precio";
-                    const imagen = productoElement.querySelector("img")?.getAttribute("src") || "";
-                    const talles = productoElement.getAttribute("data-talles")?.split(",") || [];
-                    carrito.push({ id, nombre, precio, imagen, talles, talleSeleccionado: talles[0] }); 
-                    alert(`${nombre} agregado al carrito`); 
-                    actualizarCarrito(); 
-                });
-            });
-        });
-        </script>
-        <!-- script para mostrar los talles según los que esten disponibles en el data-talles -->
-        <script>
-            const productCards = document.querySelectorAll('.product-card');
-            productCards.forEach((productCard) => {
-                const talles = productCard.getAttribute('data-talles')?.split(',');
-                if (talles && talles.length > 0) {
-                    const caracteristicasList = productCard.querySelector('.caracteristicas ul');
 
-                    const tallesItem = document.createElement('li');
-                    tallesItem.textContent = `Talles: ${talles.join(', ')}`;
+                    carrito.forEach((producto, index) => {
+                        const item = document.createElement("div");
+                        item.classList.add("cart-item");
+                        item.innerHTML = `
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">
+                                <img src="${producto.imagen}" alt="${producto.nombre}" style="width: 40px; height: 40px; margin-right: 10px; border-radius: 5px;">
+                                <div>
+                                    <p style="font-size: 14px; margin: 0;"><strong>${producto.nombre}</strong></p>
+                                    <p style="font-size: 14px; margin: 0;">${producto.precio}</p>
+                                    <label for="talle-${index}" style="font-size: 12px;">Talle:</label>
+                                    <select id="talle-${index}" class="select-talle" style="padding: 3px; margin-top: 5px; font-size: 12px;">
+                                        ${producto.talles.map((talle) => `<option value="${talle}">${talle}</option>`).join("")}
+                                    </select>
+                                </div>
+                                <button class="btn-remove" style="background-color: #f44336; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">
+                                    Remover
+                                </button>
+                            </div>`;
+                        cartItemsContainer.appendChild(item);
 
-                    caracteristicasList.appendChild(tallesItem);
-                } else {
-                    console.warn(`No se encontraron talles para el producto: ${productCard.querySelector('h6')?.textContent}`);
+                        item.querySelector(".btn-remove").addEventListener("click", () => {
+                            carrito.splice(index, 1);
+                            actualizarCarrito();
+                        });
+
+                        const selectTalle = item.querySelector(`#talle-${index}`);
+                        selectTalle.addEventListener("change", (e) => {
+                            producto.talleSeleccionado = e.target.value;
+                            console.log(`Talle seleccionado para ${producto.nombre}: ${producto.talleSeleccionado}`);
+                        });
+                    });
+
+                    if (contador) contador.textContent = carrito.length.toString();
                 }
+
+                function abrirCarrito() {
+                    const cartMenu = document.getElementById("cartMenu");
+                    cartMenu.style.display = "block";
+                    actualizarCarrito();
+                }
+
+                const openCartButton = document.getElementById("menuButton2");
+                if (openCartButton) openCartButton.addEventListener("click", abrirCarrito);
+
+                const botonesAgregar = document.querySelectorAll(".btn.btn-primary");
+                botonesAgregar.forEach((boton) => {
+                    boton.addEventListener("click", (e) => {
+                        const productoElement = e.target.closest(".product-card");
+                        if (!productoElement) return;
+
+                        const id = productoElement.getAttribute("data-id");
+                        const nombre = productoElement.querySelector("h6")?.textContent.trim() || "Sin nombre";
+                        const precio = productoElement.querySelector("p")?.textContent.trim() || "Sin precio";
+                        const imagen = productoElement.querySelector("img")?.getAttribute("src") || "";
+                        const talles = productoElement.getAttribute("data-talles")?.split(",") || [];
+
+                        // Verifica si el producto ya está en el carrito
+                        const yaExiste = carrito.some((prod) => prod.id === id);
+                        if (yaExiste) {
+                            alert(`${nombre} ya está en el carrito`);
+                            return;
+                        }
+
+                        carrito.push({ id, nombre, precio, imagen, talles, talleSeleccionado: talles[0] || null });
+                        alert(`${nombre} agregado al carrito`);
+                        actualizarCarrito();
+                    });
+                });
+
+                // Mostrar talles en la tarjeta de producto
+                const productCards = document.querySelectorAll('.product-card');
+                productCards.forEach((productCard) => {
+                    const talles = productCard.getAttribute('data-talles')?.split(',');
+                    if (talles?.length > 0) {
+                        const caracteristicasList = productCard.querySelector('.caracteristicas ul');
+                        const tallesItem = document.createElement('li');
+                        tallesItem.textContent = `Talles: ${talles.join(', ')}`;
+                        caracteristicasList?.appendChild(tallesItem);
+                    }
+                });
             });
         </script>
     </body>

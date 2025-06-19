@@ -14,6 +14,8 @@ class Usuarios_controller extends BaseController
         $validation = \Config\Services::validation();
         $request = \Config\Services::request();
         $session = session();
+        $redirect = $this->request->getGet('redirect');
+
 
         $validation->setRules([
             "email" => [
@@ -60,9 +62,9 @@ class Usuarios_controller extends BaseController
             $session->set($data);
             switch ($user['perfil_id']) {
                 case '1':
-                    return view("Plantillas/nav_view").view("Contenidos/principal_view").view("Plantillas/footer_view");
+                    return redirect()->to(base_url('Ver_consultas'));
                 case '2':
-                    return redirect()->route('/');
+                    return redirect()->to($redirect ? base_url($redirect) : base_url('/'));
             }
         } else {
             $validation->setError('log', 'Usuario y/o contraseña incorrecto!');
@@ -73,7 +75,6 @@ class Usuarios_controller extends BaseController
             //return redirect()->route('iniciarSesion_view')->with('mensaje', 'Usuario y/o contraseña incorrecto!');
         }
     }
-
 
 
     public function cerrar_sesion(){
@@ -150,21 +151,21 @@ class Usuarios_controller extends BaseController
     }
 
 
+    //metodos para condiguracion de perfil de usuarios.
 
-
-    public function editar_usuario(){
+    public function editarUsuario(){
         $validation = \Config\Services::validation();
         $request = \Config\Services::request();
         $session = session();
 
         $validation->setRules([
-            "nombre" => [
+            "nuevoNombre" => [
                 "rules" => 'required',
                 "errors" => [
                     "required" => "Ingresa un nombre",
                 ]
             ],
-            "apellido" => [
+            "nuevoApellido" => [
                 "rules" => 'required',
                 "errors" => [
                     "required" => "Ingresa un apellido",
@@ -172,39 +173,121 @@ class Usuarios_controller extends BaseController
             ],
         ]);
         
-        $User_Model = new Usuarios_Model();
+        if ($validation->withRequest($request)->run() ){
+            $User_Model = new Usuarios_Model();
 
-        $id = session()->get('id');
+            $id = session()->get('id');
 
-        $data = [
-            'persona_nombre' => ucwords(strtolower($request->getPost('nombre'))),
-            'persona_apellido' => ucwords(strtolower($request->getPost('apellido')))
-        ];
+            $data = [
+                'persona_nombre' => ucwords(strtolower($request->getPost('nuevoNombre'))),
+                'persona_apellido' => ucwords(strtolower($request->getPost('nuevoApellido')))
+            ];
 
-        session()->set([
-            'id' => $id,
-            'nombre' => $data['persona_nombre'],
-            'apellido' => $data['persona_apellido'],
-            'perfil' => session()->get('perfil'), 
-            'login' => TRUE
-        ]);
+            session()->set([
+                'id' => $id,
+                'nombre' => $data['persona_nombre'],
+                'apellido' => $data['persona_apellido'],
+                'perfil' => session()->get('perfil'), 
+                'login' => TRUE
+            ]);
 
-        if ($User_Model->update($id, $data)) {
-            return redirect()->to(base_url())->with('success', 'Usuario actualizado correctamente.');
-        } else {
-            return redirect()->back()->with('error', 'Hubo un problema al actualizar los datos.');
+            if ($User_Model->update($id, $data)) {
+                return redirect()->to(base_url())->with('success', 'Usuario actualizado correctamente.');
+            } else {
+                return redirect()->to(base_url())->with('error', 'Hubo un problema al actualizar los datos.');
+            }
+        } else{
+            $perfil = $session->get('perfil'); 
+
+            session()->setFlashdata('error', $validation->getErrors());
+            if ($perfil == 2) {
+                return redirect()->to(base_url());
+            } else {
+                return redirect()->route('Ver_consultas');
+            }
         }
-
     }
 
+    public function editarCorreo(){
+        $validation = \Config\Services::validation();
+        $request = \Config\Services::request();
+        $session = session();
 
+        $validation->setRules([
+            "nuevoCorreo" => [
+                "rules" => "required|max_length[50]|valid_email",
+                "errors" => [
+                    "required" => "Ingresa un correo electronico",
+                    "max_length" => "El email no puede superar los 50 caracteres",
+                    "valid_email" => "La dirección de correo debe ser válida"
+                ]
+            ],
+        ]);
+        if ($validation->withRequest($request)->run() ){
+            $User_Model = new Usuarios_Model();
 
-    public function admin(){
-        $data['titulo'] = 'Index';
+            $data = [
+                'persona_email' => $request->getPost('nuevoCorreo'),
+            ];
 
-        return view('plantillas/header_view')
-            .view('plantillas/navegar_admin_view')
-            .view('Backend/contenido_admin_view');
+            if ($User_Model->update($id, $data)) {
+                return redirect()->to(base_url())->with('success', 'Correo actualizado correctamente.');
+            } else {
+                return redirect()->to(base_url())->with('error', 'Hubo un problema al actualizar los datos.');
+            }
+         } else {
+            session()->setFlashdata('error', $validation->getErrors());
+           if ($perfil == 2) {
+                return redirect()->to(base_url());
+            } else {
+                return redirect()->route('Ver_consultas');
+            }
+        }
+    }
+
+    public function editarContraseña(){
+        $validation = \Config\Services::validation();
+        $request = \Config\Services::request();
+        $session = session();
+
+        $validation->setRules([
+            "nuevaContraseña" => [
+                "rules" => "required|max_length[255]|min_length[8]|regex_match[/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/]",
+                "errors" => [
+                    "required" => "Ingresa una contraseña",
+                    "max_length" => "La contraseña no puede superar los 255 caracteres",
+                    "min_length" => "La contraseña debe tener al menos 8 caracteres",
+                    "regex_match" => "La contraseña debe tener una mayúscula, una minúscula y un número"
+                ]
+            ],
+            "contraseñaConf" => [
+                "rules" => "required|matches[password]",
+                "errors" => [
+                    "required" => "Confirme la contraseña",
+                    "matches" => "Las contraseñas ingresadas no coinciden"
+                ]
+            ],
+        ]);
+        if ($validation->withRequest($request)->run() ){
+            $User_Model = new Usuarios_Model();
+
+            $data = [
+                'persona_contraseña' => $request->getPost('nuevaContraseña'),
+            ];
+
+            if ($User_Model->update($id, $data)) {
+                return redirect()->to(base_url())->with('success', 'Contraseña actualizado correctamente.');
+            } else {
+                return redirect()->to(base_url())->with('error', 'Hubo un problema al actualizar los datos.');
+            }
+         } else {
+            session()->setFlashdata('error', $validation->getErrors());
+            if ($perfil == 2) {
+                return redirect()->to(base_url());
+            } else {
+                return redirect()->route('Ver_consultas');
+            }
+        }
     }
 }
 

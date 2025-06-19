@@ -1,5 +1,5 @@
 <body>
-    <?= validation_list_errors() ?>
+    
     <link rel="stylesheet" href="assets/css/estiloContacto.css">
     <header>
         <h1>Contactanos</h1>
@@ -34,7 +34,12 @@
                 <h1 class="tituloFormulario">Formulario de Contacto Via E-Mail.</h1>
                 <div class="mb3">
                 <label for="nombre", class="form-label"> Nombre </label>
-                <?php echo form_input(['name' => 'nombre', 'id' => 'nombre', 'type' => 'text', 'class' => 'controls form_texto_corto', 'placeholder' => 'Ingrese su nombre completo', 'value' => set_value('nombre')]); ?>
+                <?php echo form_input(['name' => 'nombre', 'id' => 'nombre', 'type' => 'text', 'class' => 'controls form_texto_corto', 'placeholder' => 'Ingrese su nombre', 'value' => set_value('nombre')]); ?>
+                </div>
+
+                <div class="mb3">
+                <label for="apellido", class="form-label"> Nombre </label>
+                <?php echo form_input(['name' => 'apellido', 'id' => 'apellido', 'type' => 'text', 'class' => 'controls form_texto_corto', 'placeholder' => 'Ingrese su apellido', 'value' => set_value('apellido')]); ?>
                 </div>
 
                 <div class="mb3">

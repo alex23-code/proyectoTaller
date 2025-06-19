@@ -2,6 +2,29 @@
 <html>  
 <footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- script para mostrar errores de configuracion -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var alerta = document.getElementById("alerta");
+            if (alerta && alerta.innerText.trim() !== "") {
+                alerta.style.display = "block"; // Forzar que se muestre
+            }
+        });
+
+        function cerrarAlerta() {
+            document.getElementById("alerta").style.display = "none";
+        }
+
+        document.addEventListener("click", function (event) {
+        var alerta = document.getElementById("alerta");
+        
+        if (alerta && alerta.style.display === "block" && !alerta.contains(event.target)) {
+            alerta.style.display = "none";
+        }
+        });
+
+        
+    </script>
     <div class="container">
         <div class="row">
             <div class="col-md-4">
