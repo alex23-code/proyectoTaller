@@ -1,4 +1,10 @@
 <body>
+    <?php if (session()->getFlashdata('success')): ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <?= session()->getFlashdata('success'); ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+    </div>
+<?php endif; ?>
     <h1 class="text-center">Listado de productos</h1>
     <div class="container">
         <table id="mytable" class="table table-bordered table-striped table-hover">
@@ -56,7 +62,7 @@
                         </td>
                         <td>
                             <?php if ($row['estado'] == 1) { ?>
-                                <a class="btn btn-danger" href="<?= base_url('productosController/eliminar_producto/' . $row['producto_id']); ?>">Eliminar</a>
+                                <a class="btn btn-danger" href="<?= base_url('productosController/desactivar_producto/' . $row['producto_id']); ?>">Desactivar</a>
                             <?php } else { ?>
                                 <a class="btn btn-warning" href="<?= base_url('productosController/activar_producto/' . $row['producto_id']); ?>">Activar</a>
                             <?php } ?>

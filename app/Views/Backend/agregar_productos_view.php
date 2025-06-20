@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="assets/css/miEstiloRegistro.css">
 <h1 class="text-center">Registro de Productos</h1>
 <div class="container">
     <div class="w-50 mx-auto">

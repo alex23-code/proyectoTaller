@@ -13,6 +13,15 @@ class ProductosModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['id_marca', 'precio', 'stock', 
-    'estado', 'id_categoria', 'id_talle', 'descripcion', 'producto_imagen'];
+    protected $allowedFields = ['id_marca', 'precio', 'producto_imagen', 
+                                'estado', 'id_categoria', 'id_tipo', 'descripcion'];
+
+
+    public function get_all_products_with_details() {
+        return $this->select('productos.*, c.descripcion as categoria_descripcion, t.descripcion as tipo_descripcion')
+                    ->join('categoria c', 'c.id_categoria = productos.id_categoria')
+                    ->join('tipo t', 't.id_tipo = productos.id_tipo')
+                    ->findAll();
+    }
+
 }
