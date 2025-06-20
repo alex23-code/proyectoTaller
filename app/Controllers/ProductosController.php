@@ -6,6 +6,9 @@ use App\Models\MarcaModel;
 use App\Models\TalleModel;
 use App\Models\Tipo_Model;
 use App\Models\StockTallesModel;
+use App\Models\VentaModel;
+use App\Models\Detalle_Venta_Model;
+use App\Models\PagoTarjetaModel;
 
 class ProductosController extends BaseController{
 
@@ -199,6 +202,20 @@ class ProductosController extends BaseController{
     $request = \Config\Services::request();
 
     $validation->setRules([
+        
+        'form_precio' => 'required|greater_than[0]',
+        'form_stock' => 'required|greater_than[0]',
+        'form_descripcion' => 'required|max_length[500]',
+
+        // Completar las reglas de validación
+        'categoria' => 'is_not_unique[categoria.id_categoria]',
+        'marca' => 'is_not_unique[marca.id_marca]',
+        'talle' => 'is_not_unique[talle.id_talle]',
+        'imagen' => 'uploaded[imagen]|is_image[imagen]',
+    ], 
+       [
+        // Mensajes de error
+
         'form_precio' => [
             'rules' => 'required|greater_than[0]',
             'errors' => [
@@ -232,14 +249,15 @@ class ProductosController extends BaseController{
             ]
         ],
         'imagen' => [
-            'rules' => 'uploaded[imagen]|max_size[imagen,4096]|is_image[imagen]',
-            'errors' => [
-                'uploaded' => 'Debe seleccionar una imagen.',
-                'max_size' => 'La imagen debe tener un tamaño máximo de 4MB.',
-                'is_image' => 'Debe ser una imagen válida en formato JPG, PNG o GIF.'
-            ]
-        ]
-    ]);
+            'uploaded' => 'Debe seleccionar una imagen',
+            'is_image' => 'Debe ser una imagen válida',
+        ],
+        
+        'talle' => [
+            'is_not_unique' => 'Debe seleccionar una categoría',
+        ],
+    ],
+   );
 
     if ($validation->withRequest($request)->run()) {
         // Procesar imagen
@@ -254,10 +272,12 @@ class ProductosController extends BaseController{
 
         $productoData = [
             'id_marca' => $request->getPost('marca'),
-            'precio' => $precio,
+            'precio' => $request->getPost('form_precio'),
+            'stock' => $request->getPost('form_stock'),
+            //'libro_descripcion' => $request->getPost('descripcion'),
             'producto_imagen' => $nombre_aleatorio,
             'id_categoria' => $request->getPost('categoria'),
-            'id_tipo' => $request->getPost('tipo'),
+            'id_talle' => $request->getPost('talle'),
             'estado' => 1,
             'descripcion' => $request->getPost('form_descripcion'),
         ];
@@ -471,5 +491,90 @@ class ProductosController extends BaseController{
         return $this->response->setJSON($talles);
 }
 
+public function guardar_venta()
+{
+    $cart = \Config\Services::cart();
+    $venta = new VentaModel();
+    $detalle = new Detalle_Venta_Model();
+    $productos = new ProductosModel();
+
+    if (is_null($cart)) {
+    die('El carrito no fue inicializado correctamente.');
+}
+
+
+    $cart1 = $cart->contents();
+
+    foreach ($cart1 as $item) {
+        $productos = $productos->where('producto_id', $item['id'])->first();
+        if ($productos['stock'] < $item['qty']) {
+            // Mensaje de producto sin stock
+            return redirect()->route('ver_carrito');
+        }
+    }
+      
     
+
+
+
+    $data = [
+    'id_cliente' => 2,
+    'venta_fecha' => date('Y-m-d'),
+];
+
+
+$nombre = $this->request->getPost('nombre');
+$apellido = $this->request->getPost('apellido');
+$dni = $this->request->getPost('dni');
+$correo = $this->request->getPost('correo');
+$direccion = $this->request->getPost('direccion');
+
+
+
+$venta_id = $venta->insert($data);
+
+$detalleModel = new \App\Models\Detalle_Venta_Model(); // Asegurate de tener el modelo cargado
+
+$cart1 = $cart->contents();
+foreach ($cart1 as $item) {
+    $detalle_venta = array(
+        'id_producto' => $item['id'],
+        'id_venta' => $venta_id,
+        'detalle_cantidad' => $item['qty'],
+        'detalle_precio' => $item['price'],
+        'Nombre' => $nombre,
+        'Apellido' => $apellido,
+        'Dni' => $dni,
+        'Correo' => $correo,
+        'Direccion' => $direccion
+    );
+    if (!$detalleModel->save($detalle_venta)) {
+        log_message('error', 'Error al guardar detalle: ' . print_r($detalleModel->errors(), true));}
+
+    $productos = $productos->where('producto_id', $item['id'])->first();
+    $data = [
+        'stock' => $productos['stock'] - $item['qty'],
+    ];
+
+    // Actualiza el stock del libro
+    $productos->update($item['id'], $data);
+
+    // Inserta el detalle de venta
+    $detalle_venta->insert($detalle_venta);
+}
+
+
+
+// Mensaje de agradecimiento por la compra
+$cart->destroy();
+session()->setFlashdata('mensaje', '¡Gracias por tu compra!');
+return redirect()->route('Ver_carro');
+
+
+
+}
+
+    public function formulario_cliente(){
+       return view('Backend/form_compra');
+    }
 }

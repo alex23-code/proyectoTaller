@@ -11,7 +11,7 @@ class ConsultasModel extends Model{
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['Nombre', 'Correo', 'NumTelefono','Consulta'];
+    protected $allowedFields = ['Nombre', 'Apellido','Correo', 'NumTelefono','Consulta'];
 
     
 }

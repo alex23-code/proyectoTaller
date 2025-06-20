@@ -32,10 +32,10 @@
         <label for="titulo">Stock</label>
         <?php echo form_input(['name' => 'form_stock', 'id' => 'form_stock', 'class' => 'form-control','placeholder' => 'Ingrese el stock', 'value'=>set_value('form_stock')]); ?>
     </div>
-
+    
     <div class="form-group">
         <label for="imagen">Imagen</label>
-        <?php echo form_input(['name' => 'form_imagen', 'id' => 'form_imagen', 'type'=>'file', 'class' => 'form-control']); ?>
+        <?php echo form_input(['name' => 'imagen', 'id' => 'imagen', 'type'=>'file', 'class' => 'form-control']); ?>
     </div>
 
 <div class="form-group">

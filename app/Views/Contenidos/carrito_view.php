@@ -4,6 +4,14 @@
         <title>Carrito de compras</title>
         <link href="<?= base_url('assets/css/miEstiloCarrito.css') ?>" rel="stylesheet">
     </head>
+
+    <?php if (session()->getFlashdata('mensaje')): ?>
+  <div class="alert alert-success">
+    <?= session()->getFlashdata('mensaje') ?>
+  </div>
+<?php endif; ?>
+
+
     <body class="container-fluid">
         <main>
             <h2 style="text-align:center">🛒 Tu carrito </h2>
@@ -53,7 +61,9 @@
                             </div>
                         </div>
                     <?php endforeach; ?>
-                    <button type="submit" class="btn btn-success mt-3">Finalizar compra</button>
+                    <a href="<?= base_url('datos_cliente') ?>" class="btn btn-success">Ordenar compra</a>
+
+                    
                 </form>
             <?php endif; ?>
         </main>

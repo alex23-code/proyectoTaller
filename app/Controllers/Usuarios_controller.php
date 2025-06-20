@@ -49,7 +49,7 @@ class Usuarios_controller extends BaseController
 
         $User_Model = new Usuarios_Model();
 
-        $user = $User_Model->where('persona_email', $mail)->where('persona_estado', 1)->first();
+        $user = $User_Model->where('persona_mail', $mail)->where('persona_estado', 1)->first();
 
         if ($user && password_verify($pass, $user['persona_password'])) {
             $data = [
@@ -102,7 +102,7 @@ class Usuarios_controller extends BaseController
                 ]
             ],
             "email" => [
-                "rules" => "required|max_length[50]|valid_email|is_unique[personas.persona_email]",
+                "rules" => "required|max_length[50]|valid_email|is_unique[personas.persona_mail]",
                 "errors" => [
                     "required" => "Ingresa un correo electronico",
                     "max_length" => "El email no puede superar los 50 caracteres",
@@ -132,7 +132,7 @@ class Usuarios_controller extends BaseController
             $data = [
                 'persona_apellido' => ucwords(strtolower($request->getPost('apellido'))),
                 'persona_nombre' => ucwords(strtolower($request->getPost('nombre'))),
-                'persona_email' => $request->getPost('email'),
+                'persona_mail' => $request->getPost('email'),
                 'persona_password' => password_hash($request->getPost('password'), PASSWORD_BCRYPT),
                 'perfil_id' => 2,
                 'persona_estado' => 1
@@ -141,7 +141,7 @@ class Usuarios_controller extends BaseController
             $userRegister = new Usuarios_Model();
             $userRegister->insert($data);
             return view('Plantillas/header_view', $data) .
-            view('Contenidos/success_view') . view('Plantillas/footer_view');
+            view('Contenidos/success') . view('Plantillas/footer_view');
         } else {
             $data['titulo'] = 'Registrarse';
             $data['validation'] = $validation->getErrors();
@@ -227,7 +227,7 @@ class Usuarios_controller extends BaseController
             $User_Model = new Usuarios_Model();
 
             $data = [
-                'persona_email' => $request->getPost('nuevoCorreo'),
+                'persona_mail' => $request->getPost('nuevoCorreo'),
             ];
 
             if ($User_Model->update($id, $data)) {

@@ -4,8 +4,10 @@
     <header>
         <h1>Contactanos</h1>
     </header>
+    <div class="mensaje-exito">
     <?php if (session('mensaje_consulta')){
-            echo session('mensaje_consulta');} ?>       
+            echo session('mensaje_consulta');} ?>
+    </div>       
     <main>
         <section class="contenido">
             <section class="datos-contacto">
@@ -40,6 +42,10 @@
                 <div class="mb3">
                 <label for="apellido", class="form-label"> Nombre </label>
                 <?php echo form_input(['name' => 'apellido', 'id' => 'apellido', 'type' => 'text', 'class' => 'controls form_texto_corto', 'placeholder' => 'Ingrese su apellido', 'value' => set_value('apellido')]); ?>
+                </div>
+
+                <label for="apellido", class="form-label"> Nombre </label>
+                <?php echo form_input(['name' => 'apellido', 'id' => 'apellido', 'type' => 'text', 'class' => 'controls form_texto_corto', 'placeholder' => 'Ingrese apellido', 'value' => set_value('apellido')]); ?>
                 </div>
 
                 <div class="mb3">
