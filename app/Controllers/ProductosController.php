@@ -16,7 +16,7 @@ class ProductosController extends BaseController{
         $talleModel = new TalleModel();
         $stockModel = new StockTallesModel();
 
-        $data['productos'] = $productoModel->findAll();
+        $data['productos'] = $productoModel->where('estado', 1)->findAll();
         $productos = $data['productos'];
 
         $marcas = $marcaModel->findAll();
@@ -59,6 +59,7 @@ class ProductosController extends BaseController{
             . view('Contenidos/catalogo_view')
             . view('Plantillas/footer_view');
     }
+
 
 
     public function agregarAlCarrito(){
@@ -434,21 +435,19 @@ class ProductosController extends BaseController{
 
 
 
-    public function eliminarProducto($id) {
-        $productoModel = new ProductosModel();
-        $productoModel->delete($id);
+   public function desactivarProducto($id) {
+    $productoModel = new ProductosModel();
+    $productoModel->update($id, ['estado' => 0]);
 
-        return redirect()->to('/productos')->with('success', 'Producto eliminado correctamente.');
-    }
+    return redirect()->to('Listar_productos')->with('success', 'Producto desactivado correctamente.');
+}
 
-    public function activarProducto($id) {
-        $productoModel = new ProductosModel();
-        
-        // Cambiar el estado del producto a activo (1)
-        $productoModel->update($id, ['estado' => 1]);
+public function activarProducto($id) {
+    $productoModel = new ProductosModel();
+    $productoModel->update($id, ['estado' => 1]);
 
-        return redirect()->to('/productos')->with('success', 'Producto activado correctamente.');
-    }
+    return redirect()->to('Listar_productos')->with('success', 'Producto activado correctamente.');
+}
 
 
     public function guardar(){

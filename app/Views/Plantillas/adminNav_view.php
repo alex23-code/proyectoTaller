@@ -24,7 +24,6 @@
                                 <il class="nav-item me-3"><a aria-current="page"  class="nav-link active" href="<?php echo base_url('Listar_productos'); ?>"><h5>Listar productos</h5></a></il>
                                 <il class="nav-item me-3"><a aria-current="page"  class="nav-link active" href="<?php echo base_url('Listar_ventas'); ?>"><h5>Listar Ventas</h5></a></il>
                                 <il class="nav-item me-3"><a aria-current="page"  class="nav-link active" href="<?php echo base_url('Registrar_productos'); ?>"><h5>Registrar productos</h5></a></il>
-                                <il class="nav-item me-3"><a aria-current="page"  class="nav-link active" href="<?php echo base_url('Gestionar_productos'); ?>"><h5>Gestionar productos</h5></a></il>
                             </ul>
                         </div>
                         <div>

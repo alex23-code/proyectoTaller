@@ -16,17 +16,12 @@ class ProductosModel extends Model
     protected $allowedFields = ['id_marca', 'precio', 'producto_imagen', 
                                 'estado', 'id_categoria', 'id_tipo', 'descripcion'];
 
-    /**
-     * Obtener talles y stock del producto
-     */
-    public function obtenerStockTalles($producto_id)
-    {
-        $db = \Config\Database::connect();
-        $query = $db->table('stock_talles')
-                    ->select('id_talle, stock')
-                    ->where('producto_id', $producto_id)
-                    ->get();
 
-        return $query->getResultArray();
+    public function get_all_products_with_details() {
+        return $this->select('productos.*, c.descripcion as categoria_descripcion, t.descripcion as tipo_descripcion')
+                    ->join('categoria c', 'c.id_categoria = productos.id_categoria')
+                    ->join('tipo t', 't.id_tipo = productos.id_tipo')
+                    ->findAll();
     }
+
 }

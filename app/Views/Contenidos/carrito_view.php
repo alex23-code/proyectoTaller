@@ -6,16 +6,16 @@
     </head>
     <body class="container-fluid">
         <main>
-            <h2 style="text-align:center">🛒 Tu carrito </h2>
+            <h2>🛒 Tu carrito</h2>
             <?php if (empty($carrito)): ?>
                 <div class="alert alert-info">Tu carrito está vacío.</div>
             <?php else: ?>
                 <form id="formCheckout" method="post" action="<?= base_url('checkout') ?>">
-                    <?php foreach ($carrito as $index => $producto): ?>
+                    <?= csrf_field() ?> <?php foreach ($carrito as $index => $producto): ?>
                         <div class="card mb-3 p-3">
                             <div class="row align-items-center">
                                 <div class="col-auto">
-                                    <img src="<?= base_url('assets/uploads/' . esc($producto['imagen'])) ?>" width="90" alt="Imagen">
+                                    <img src="<?= base_url('assets/uploads/' . esc($producto['imagen'])) ?>" width="60" alt="Imagen">
                                 </div>
                                 <div class="col">
                                     <strong><?= esc($producto['nombre']) ?></strong><br>
@@ -44,17 +44,17 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-auto">
-                                    <form method="post" action="<?= base_url('eliminar') ?>">
-                                        <input type="hidden" name="id" value="<?= esc($producto['id']) ?>">
-                                        <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
-                                    </form>
-                                </div>
+                            </form>
+                            <div class="col-auto">
+                                <form method="post" action="<?= base_url('eliminar') ?>">
+                                    <?= csrf_field() ?> <input type="hidden" name="id" value="<?= esc($producto['id']) ?>">
+                                    <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                                </form>
                             </div>
                         </div>
-                    <?php endforeach; ?>
-                    <button type="submit" class="btn btn-success mt-3">Finalizar compra</button>
-                </form>
+                    </div>
+                <?php endforeach; ?>
+                <button type="submit" class="btn btn-success mt-3">Finalizar compra</button>
             <?php endif; ?>
         </main>
     </body>
