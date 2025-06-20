@@ -23,6 +23,8 @@ $routes->get('Gestionar_productos/editar/(:num)', 'ProductosController::editarPr
 $routes->get('Registrar_productos', 'ProductosController::agregarProducto');       
 $routes->post('insertar_producto', 'ProductosController::registrar_producto'); 
 $routes->post('productosController/actualizarProducto/(:num)', 'ProductosController::actualizarProducto/$1');
+$routes->get('productosController/desactivar_producto/(:num)', 'ProductosController::desactivarProducto/$1');
+$routes->get('productosController/activar_producto/(:num)', 'ProductosController::activarProducto/$1');
 
 //controladores de sesion y usuarios
 $routes->post('iniciar', 'Usuarios_controller::inicio');
