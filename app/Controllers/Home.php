@@ -13,37 +13,44 @@ class Home extends BaseController
         $stockModel = new \App\Models\StockTallesModel();
         $talleModel = new \App\Models\TalleModel();
 
-
         $idRemeras = 1;
         $idShorts  = 2;
         $idHombre  = 1;
         $idMujer   = 2;
 
         $talles = $talleModel->findAll();
-        $mapaTalles = array_column($talles, 'descripcion', 'id_talle');
+        $mapaTalles = [];
+        foreach ($talles as $t) {
+            $mapaTalles[$t['id_talle']] = $t['descripcion'];
+        }
 
         $allProducts = $productoModel
-        ->where('estado', 1)
-        ->findAll();
+            ->where('estado', 1)
+            ->findAll();
 
-        // Agregamos talles a cada producto
+        // Agregamos talles a cada producto en forma estructurada
         foreach ($allProducts as &$producto) {
             $stocks = $stockModel
                 ->where('producto_id', $producto['producto_id'])
+                ->where('stock >', 0)
                 ->findAll();
 
             $tallesProducto = [];
-
             foreach ($stocks as $s) {
                 $idTalle = $s['id_talle'];
                 if (isset($mapaTalles[$idTalle])) {
-                    $tallesProducto[] = $mapaTalles[$idTalle];
+                    $tallesProducto[] = [
+                        'id_talle' => $idTalle,
+                        'descripcion' => $mapaTalles[$idTalle],
+                        'cantidad' => $s['stock']
+                    ];
                 }
             }
 
-            $producto['talles'] = json_encode($tallesProducto);
+            $producto['talles'] = $tallesProducto;
         }
         unset($producto);
+
         // Separar según categoría y tipo
         $remeras_hombre = [];
         $shorts_hombre = [];
@@ -51,16 +58,16 @@ class Home extends BaseController
         $shorts_mujer = [];
 
         foreach ($allProducts as $product) {
-            $prod_id_categoria = $product['id_categoria'];
-            $prod_id_tipo      = $product['id_tipo'];
+            $categoria = $product['id_categoria'];
+            $tipo      = $product['id_tipo'];
 
-            if ($prod_id_categoria == $idRemeras && $prod_id_tipo == $idHombre) {
+            if ($categoria == $idRemeras && $tipo == $idHombre) {
                 $remeras_hombre[] = $product;
-            } elseif ($prod_id_categoria == $idRemeras && $prod_id_tipo == $idMujer) {
+            } elseif ($categoria == $idRemeras && $tipo == $idMujer) {
                 $shorts_hombre[] = $product;
-            } elseif ($prod_id_categoria == $idShorts && $prod_id_tipo == $idHombre) {
+            } elseif ($categoria == $idShorts && $tipo == $idHombre) {
                 $remeras_mujer[] = $product;
-            } elseif ($prod_id_categoria == $idShorts && $prod_id_tipo == $idMujer) {
+            } elseif ($categoria == $idShorts && $tipo == $idMujer) {
                 $shorts_mujer[] = $product;
             }
         }
@@ -79,18 +86,19 @@ class Home extends BaseController
 
         $data = [
             'remeras_hombre' => $remeras_hombre,
-            'shorts_hombre' => $shorts_hombre,
-            'remeras_mujer' => $remeras_mujer,
-            'shorts_mujer' => $shorts_mujer,
-            'marcas' => $marcasArray,
-            'categorias' => $categoriasArray,
-            'base_url' => base_url(),
+            'shorts_hombre'  => $shorts_hombre,
+            'remeras_mujer'  => $remeras_mujer,
+            'shorts_mujer'   => $shorts_mujer,
+            'marcas'         => $marcasArray,
+            'categorias'     => $categoriasArray,
+            'base_url'       => base_url(),
         ];
 
-        return view('plantillas/header_view', $data).
-        view('Contenidos/principal_view', $data).
-        view('plantillas/footer_view');
+        return view('plantillas/header_view', $data)
+            . view('Contenidos/principal_view', $data)
+            . view('plantillas/footer_view');
     }
+
 
 
     public function somos(){

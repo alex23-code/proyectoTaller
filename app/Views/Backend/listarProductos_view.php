@@ -7,6 +7,13 @@
 <?php endif; ?>
     <h1 class="text-center">Listado de productos</h1>
     <div class="container">
+        <form method="get" action="<?= base_url('Listar_productos') ?>" class="mb-3">
+            <div class="input-group">
+                <input type="text" name="buscar" class="form-control" placeholder="Buscar producto..." value="<?= esc($buscar ?? '') ?>">
+                <button class="btn btn-primary" type="submit">Buscar</button>
+            </div>
+        </form>
+
         <table id="mytable" class="table table-bordered table-striped table-hover">
             <thead>
                 <tr>

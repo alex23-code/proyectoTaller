@@ -1,6 +1,12 @@
 <body>
+  <?php if (session()->getFlashdata('msg')): ?>
+      <div class="alert alert-warning text-center">
+        <?= esc(session()->getFlashdata('msg')) ?>
+      </div>
+    <?php endif; ?>
   <main>
     <link rel="stylesheet" href="./assets/css/iniciarSesion.css">
+    
 
       <?php echo form_open('iniciar', 'class=formulario') ?>
       <h1>Iniciar Sesión</h1>

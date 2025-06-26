@@ -22,7 +22,6 @@
             alerta.style.display = "none";
         }
         });
-
         
     </script>
     <div class="container">

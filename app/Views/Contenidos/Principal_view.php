@@ -58,86 +58,118 @@
             <!-- Catalogo para remeras de hombre -->
             <img style="margin: 10px 0px; width: 100%;" src="assets/img/banner_hombre.png" alt="">
             <?php
-        function generate_product_carousel($id_carousel, $title, $products, $products_per_slide, $base_url) {
-            $total_products = count($products);
-            $num_slides = ceil($total_products / $products_per_slide);
-            ?>
-            <div class="Category-title mb-4">
-                <h2 class="text-center mb-4 mt-5"><?php echo $title; ?></h2>
-            </div>
-            <div id="<?php echo $id_carousel; ?>" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <?php
-                    for ($i = 0; $i < $num_slides; $i++) {
-                        $start_index = $i * $products_per_slide;
-                        $end_index = min($start_index + $products_per_slide, $total_products);
-                        $is_active = ($i === 0) ? 'active' : '';
-                    ?>
+            function generate_product_carousel($id_carousel, $title, $products, $products_per_slide, $base_url) {
+                $total_products = count($products);
+                $num_slides = ceil($total_products / $products_per_slide);
+                ?>
+                <div class="Category-title mb-4">
+                    <h2 class="text-center mb-4 mt-5"><?php echo $title; ?></h2>
+                </div>
+                <div id="<?php echo $id_carousel; ?>" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <?php
+                        for ($i = 0; $i < $num_slides; $i++) {
+                            $start_index = $i * $products_per_slide;
+                            $end_index = min($start_index + $products_per_slide, $total_products);
+                            $is_active = ($i === 0) ? 'active' : '';
+                        ?>
                         <div class="carousel-item <?php echo $is_active; ?>">
-                            <div class="row"> <?php
-                                for ($j = $start_index; $j < $end_index; $j++) {
+                            <div class="row">
+                                <?php for ($j = $start_index; $j < $end_index; $j++): 
                                     $producto = $products[$j];
-                                ?>
+                                    $producto_id = $producto['producto_id'];
+                                    ?>
                                     <div class="col-md-3 col-sm-6 col-12">
-                                        <div class="product-card"
-                                            data-id="<?= $producto['producto_id']; ?>"
-                                            data-talles="<?= esc($producto['talles'] ?? ''); ?>">
-                                            
-                                            <img src="<?= base_url('assets/uploads/' . $producto['producto_imagen']); ?>"
-                                                alt="<?= esc($producto['descripcion']); ?>"
+                                        <div class="product-card">
+                                            <img src="<?= base_url('assets/uploads/' . $producto['producto_imagen']) ?>"
+                                                alt="<?= esc($producto['descripcion']) ?>"
                                                 class="img-fluid">
 
-                                            <p class="mt-2">$<?= number_format($producto['precio'], 2, ',', '.'); ?></p>
-                                            
-                                            <h6><?= esc($producto['descripcion']); ?></h6>
+                                            <p class="mt-2">$<?= number_format($producto['precio'], 2, ',', '.') ?></p>
+                                            <h6><?= esc($producto['descripcion']) ?></h6>
 
                                             <span>
-                                                6 cuotas sin interés de $<?= number_format($producto['precio'] / 6, 2, ',', '.'); ?>
+                                                6 cuotas sin interés de $<?= number_format($producto['precio'] / 6, 2, ',', '.') ?>
                                             </span>
 
-                                            <form method="post" action="<?= base_url('carrito/agregar') ?>">
-                                                <input type="hidden" name="id" value="<?= $producto['producto_id'] ?>">
-                                                <button class="btn btn-primary mt-2" type="submit">
-                                                    <i class="fa-solid fa-cart-shopping"></i>
-                                                </button>
-                                            </form>
+                                            <!-- Botón para abrir el modal -->
+                                            <button class="btn btn-primary mt-2 w-100" data-bs-toggle="modal" data-bs-target="#modalProducto<?= $producto_id ?>">
+                                                <i class="fa-solid fa-cart-shopping"></i> Agregar
+                                            </button>
+
                                             <div class="caracteristicas mt-2">
                                                 <ul class="list-unstyled">
                                                     <li><strong>Talles:</strong>
                                                         <?php
-                                                        $current_product_talles = json_decode($producto['talles'] ?? '[]', true);
-                                                        echo !empty($current_product_talles) ? esc(implode(', ', $current_product_talles)) : '—';
+                                                        $talles = $producto['talles'] ?? [];
+                                                        $nombresTalles = array_column($talles, 'descripcion');
+                                                        echo !empty($nombresTalles) ? esc(implode(', ', $nombresTalles)) : '—';
                                                         ?>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
-                                <?php }?>
-                            </div> 
-                        </div> 
-                    <?php
-                    }
-                    if ($total_products == 0) {
-                        echo '<div class="carousel-item active"><p class="text-center w-100 p-5">No hay productos disponibles en esta categoría.</p></div>';
-                    }
-                    ?>
-                </div>
 
-                <?php if ($num_slides > 1): ?>
-                <button class="carousel-control-prev" type="button" data-bs-target="#<?php echo $id_carousel; ?>" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#<?php echo $id_carousel; ?>" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Siguiente</span>
-                </button>
-                <?php endif; ?>
-            </div>
-            <?php
-            }
-            ?>
+                                    <!-- Modal para elegir talle y cantidad -->
+                                   <div class="modal fade" id="modalProducto<?= $producto_id ?>" tabindex="-1" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <form method="post" action="<?= base_url('carrito/agregar') ?>">
+                                            <?= csrf_field() ?>
+                                            <input type="hidden" name="producto_id" value="<?= esc($producto_id) ?>">
+
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h5 class="modal-title"><?= esc($producto['descripcion']) ?></h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                <label>Talle:</label>
+                                                <select name="talle" class="form-select" required>
+                                                    <?php 
+                                                    $talles = $producto['talles'] ?? [];
+                                                    foreach ($talles as $talle): ?>
+                                                        <option value="<?= $talle['id_talle'] ?>">
+                                                            <?= esc($talle['descripcion']) ?> (<?= $talle['cantidad'] ?> disponibles)
+                                                        </option>
+                                                    <?php endforeach; ?>
+                                                </select>
+
+                                                <label class="mt-2">Cantidad:</label>
+                                                <input type="number" name="cantidad" min="1" value="1" class="form-control" required>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-success">Agregar</button>
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                                </div>
+                                            </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                <?php endfor; ?>
+                            </div>
+                        </div>
+                        <?php } ?>
+
+                        <?php if ($total_products == 0): ?>
+                            <div class="carousel-item active">
+                                <p class="text-center w-100 p-5">No hay productos disponibles en esta categoría.</p>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+
+                    <?php if ($num_slides > 1): ?>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#<?php echo $id_carousel; ?>" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#<?php echo $id_carousel; ?>" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                    <?php endif; ?>
+                </div>
+            <?php } ?>
 
             <?php generate_product_carousel('remerasHombreCarousel', 'Remeras de Hombre', $remeras_hombre, 4, base_url()); ?>
             <?php generate_product_carousel('shortsHombreCarousel', 'Shorts de Hombre', $shorts_hombre, 4, base_url()); ?>

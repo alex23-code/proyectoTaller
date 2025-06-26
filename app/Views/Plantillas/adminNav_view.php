@@ -4,9 +4,7 @@
     <head>
         <meta charset = "utf-8">  
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
-        <!--<link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity=" " crossorigin="">-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> 
-        <!--<link href="assets/css/miEstilo.css" rel="stylesheet">-->
         <link rel="stylesheet" href="<?= base_url('assets/css/miEstilo.css') ?>">
         <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
         <title>Forsport</title>

@@ -4,6 +4,7 @@ use App\Models\CategoriaModel;
 use App\Models\ProductosModel;
 use App\Models\MarcaModel;
 use App\Models\TalleModel;
+use App\Models\Usuarios_Model;
 use App\Models\Tipo_Model;
 use App\Models\StockTallesModel;
 use App\Models\VentaModel;
@@ -19,8 +20,7 @@ class ProductosController extends BaseController{
         $talleModel = new TalleModel();
         $stockModel = new StockTallesModel();
 
-        $data['productos'] = $productoModel->where('estado', 1)->findAll();
-        $productos = $data['productos'];
+        $productos = $productoModel->where('estado', 1)->findAll();
 
         $marcas = $marcaModel->findAll();
         $marcasArray = [];
@@ -30,33 +30,34 @@ class ProductosController extends BaseController{
 
         $categorias = $categoriaModel->findAll();
         $categoriasArray = [];
-        foreach ($categorias as $g) {
-            $categoriasArray[$g['id_categoria']] = $g['descripcion'];
+        foreach ($categorias as $c) {
+            $categoriasArray[$c['id_categoria']] = $c['descripcion'];
         }
 
         $talles = $talleModel->findAll();
         $mapaTalles = array_column($talles, 'descripcion', 'id_talle');
 
-        $tallesPorProducto = [];
+        foreach ($productos as &$p) {
+            $producto_id = $p['producto_id'];
+            $stocks = $stockModel->where('producto_id', $producto_id)->findAll();
 
-        foreach ($productos as $productos) {
-            $producto_id = $productos['producto_id'];
-            $stocks = $stockModel
-                ->where('producto_id', $producto_id)
-                ->findAll();
+            $p['talles'] = [];
 
             foreach ($stocks as $s) {
                 $idTalle = $s['id_talle'];
                 if (isset($mapaTalles[$idTalle])) {
-                    $tallesPorProducto[$producto_id][] = $mapaTalles[$idTalle];
+                    $p['talles'][] = [
+                        'id_talle' => $idTalle,
+                        'descripcion' => $mapaTalles[$idTalle],
+                        'cantidad' => $s['stock']
+                    ];
                 }
             }
         }
-        $data['tallesPorProducto'] = $tallesPorProducto;
 
+        $data['productos'] = $productos;
         $data['marcas'] = $marcasArray;
         $data['categorias'] = $categoriasArray;
-        $data['tallesPorProducto'] = $tallesPorProducto;
 
         return view('Plantillas/header_view', $data)
             . view('Contenidos/catalogo_view')
@@ -66,38 +67,56 @@ class ProductosController extends BaseController{
 
 
     public function agregarAlCarrito(){
-        $carrito = session()->get('carrito') ?? [];
-        $id_producto = $this->request->getPost('id');
+        $activo = session()->has('login') && session()->get('login') === true;
+
+        if (!$activo) {
+            return redirect()->to(base_url('Iniciar_Sesion'))->with('msg', 'Debés iniciar sesión para agregar productos al carrito');
+        }
+
+        $request = $this->request->getPost();
+
+        $productoId = $request['producto_id'] ?? null;
+        $talle = $request['talle'] ?? null;
+        $cantidad = isset($request['cantidad']) ? intval($request['cantidad']) : 1;
+
+        if (!$productoId || !$talle) {
+            return redirect()->back()->with('carro_ok', 'Faltan datos del producto o talle');
+        }
 
         $productoModel = new ProductosModel();
+        $stockModel = new StockTallesModel();
 
-        $producto = $productoModel->find($id_producto);
+        $producto = $productoModel->find($productoId);
+        $stock = $stockModel
+            ->where('producto_id', $productoId)
+            ->where('id_talle', $talle)
+            ->first();
 
-        if (!$producto) {
-            return redirect()->back()->with('carro_ok', 'Producto no encontrado');
+        if (!$producto || !$stock) {
+            return redirect()->back()->with('carro_ok', 'Producto o stock inválido');
         }
 
-        $productoCarrito = [
-            'id' => $producto['producto_id'],
-            'nombre' => $producto['descripcion'],
-            'precio' => $producto['precio'],
-            'imagen' => $producto['producto_imagen'],
-            'cantidad' => 1,
-            'talleSeleccionado' => null // Se seleccionará en la vista del carrito
-        ];
+        $stockDisponible = intval($stock['stock']);
+        $clave = $productoId . '_' . $talle;
 
-        $encontrado = false;
-        foreach ($carrito as &$item) {
-            if ($item['id'] === $producto['producto_id']) {
-                $item['cantidad']++;
-                $encontrado = true;
-                break;
+        $carrito = session()->get('carrito') ?? [];
+
+        if (isset($carrito[$clave])) {
+            $nuevaCantidad = $carrito[$clave]['cantidad'] + $cantidad;
+            if ($nuevaCantidad > $stockDisponible) {
+                $nuevaCantidad = $stockDisponible;
             }
-        }
-        unset($item);
-
-        if (!$encontrado) {
-            $carrito[] = $productoCarrito;
+            $carrito[$clave]['cantidad'] = $nuevaCantidad;
+        } else {
+            $carrito[$clave] = [
+                'producto_id' => $productoId,
+                'nombre' => $producto['descripcion'],
+                'precio' => $producto['precio'],
+                'imagen' => $producto['producto_imagen'],
+                'talle' => $talle,
+                'cantidad' => min($cantidad, $stockDisponible),
+                'stock_disponible' => $stockDisponible
+            ];
         }
 
         session()->set('carrito', $carrito);
@@ -106,14 +125,12 @@ class ProductosController extends BaseController{
     }
 
 
+
     public function verCarrito(){
         $carrito = session()->get('carrito') ?? [];
 
         $stockTallesModel = new StockTallesModel();
         $talleModel = new TalleModel();
-
-        $productosEnCarritoConDatosCompletos = []; 
-
 
         $todosLosTalles = $talleModel->findAll();
         $tallesMap = [];
@@ -121,64 +138,64 @@ class ProductosController extends BaseController{
             $tallesMap[$talle['id_talle']] = $talle['descripcion'];
         }
 
-        foreach ($carrito as $productoEnSesion) {
-            $id_producto = $productoEnSesion['id'];
+        $productosEnCarritoConDatosCompletos = [];
+
+        foreach ($carrito as $clave => $productoEnSesion) {
+            $producto_id = $productoEnSesion['producto_id'] ?? null;
+            $id_talle = $productoEnSesion['talle'] ?? null;
 
             $stocksDelProducto = $stockTallesModel
-                                    ->where('producto_id', $id_producto)
-                                    ->where('stock >', 0) 
+                                    ->where('producto_id', $producto_id)
+                                    ->where('stock >', 0)
                                     ->findAll();
 
             $tallesDisponiblesParaSelect = [];
             $stocksPorIdTalle = [];
 
             foreach ($stocksDelProducto as $filaStock) {
-                $id_talle = $filaStock['id_talle'];
+                $id_talle_stock = $filaStock['id_talle'];
                 $stock = $filaStock['stock'];
-
-                $descripcion = $tallesMap[$id_talle] ?? 'Talle Desconocido';
-
+                $descripcion = $tallesMap[$id_talle_stock] ?? 'Talle Desconocido';
 
                 $tallesDisponiblesParaSelect[] = [
-                    'id_talle' => $id_talle,
+                    'id_talle' => $id_talle_stock,
                     'descripcion' => $descripcion
                 ];
-                $stocksPorIdTalle[$id_talle] = $stock;
+                $stocksPorIdTalle[$id_talle_stock] = $stock;
             }
 
-            $productoEnSesion['talles'] = $tallesDisponiblesParaSelect; 
-            $productoEnSesion['stocks'] = $stocksPorIdTalle;          
+            $productoEnSesion['talles'] = $tallesDisponiblesParaSelect;
+            $productoEnSesion['stocks'] = $stocksPorIdTalle;
+            $productoEnSesion['talleDescripcion'] = $tallesMap[$id_talle] ?? '—';
 
-            if (empty($tallesDisponiblesParaSelect)) {
-                $productoEnSesion['talleSeleccionado'] = null;
-            } elseif ($productoEnSesion['talleSeleccionado'] === null || !in_array($productoEnSesion['talleSeleccionado'], array_column($tallesDisponiblesParaSelect, 'id_talle'))) {
-                $productoEnSesion['talleSeleccionado'] = $tallesDisponiblesParaSelect[0]['id_talle'] ?? null;
-            }
-
-
-            $productosEnCarritoConDatosCompletos[] = $productoEnSesion;
+            $productosEnCarritoConDatosCompletos[$clave] = $productoEnSesion;
         }
 
         $data['carrito'] = $productosEnCarritoConDatosCompletos;
 
         return view('Plantillas/header_view', $data)
-            . view('Contenidos/carrito_view') 
+            . view('Contenidos/carrito_view')
             . view('Plantillas/footer_view');
     }
 
 
     public function eliminarDelCarro(){
-        $carrito = session()->get('carrito') ?? [];
-        $idAEliminar = $this->request->getPost('id');
+        $clave = $this->request->getPost('clave');
+        $carrito = session()->get('carrito');
 
-        $carritoActualizado = array_filter($carrito, function($producto) use ($idAEliminar) {
-            return $producto['id'] !== $idAEliminar;
-        });
+        log_message('debug', 'Intentando eliminar clave: ' . $clave);
+        log_message('debug', 'Claves del carrito: ' . implode(', ', array_keys($carrito ?? [])));
 
-        session()->set('carrito', array_values($carritoActualizado)); 
+        if (!isset($carrito[$clave])) {
+            return redirect()->back()->with('carro_ok', 'No se encontró ese producto en el carrito');
+        }
 
-        return redirect()->back()->with('carro_ok', 'Producto eliminado del carrito 🗑️');
+        unset($carrito[$clave]);
+        session()->set('carrito', $carrito);
+
+        return redirect()->back()->with('carro_ok', 'Producto eliminado del carrito');
     }
+
 
 
     public function agregarProducto() {
@@ -323,59 +340,80 @@ class ProductosController extends BaseController{
     }
 
 
-    public function listarProductos() {
-        $marcaModel = new MarcaModel();
-        $categoriaModel = new CategoriaModel();
-        $talleModel = new TalleModel();
-        $tipoModel = new Tipo_Model();
-        $productoModel = new ProductosModel();
-        $stockModel = new StockTallesModel();
+    public function listarProductos()
+{
+    $marcaModel = new MarcaModel();
+    $categoriaModel = new CategoriaModel();
+    $talleModel = new TalleModel();
+    $tipoModel = new Tipo_Model();
+    $productoModel = new ProductosModel();
+    $stockModel = new StockTallesModel();
 
-        $productos = $productoModel->findAll();
-        $stocksPorProducto = [];
+    $termino = $this->request->getGet('buscar');
+    
+    $termino = $this->request->getGet('buscar');
 
-        
-        foreach ($productos as $producto) {
-            $producto_id = $producto['producto_id'];
-            $stocks = $stockModel
-                ->where('producto_id', $producto_id)
-                ->findAll();
+if (!empty($termino)) {
+    $productos = $productoModel
+        ->select('productos.*, marca.descripcion AS nombre_marca')
+        ->join('marca', 'marca.id_marca = productos.id_marca')
+        ->groupStart()
+            ->like('productos.descripcion', $termino)
+            ->orLike('marca.descripcion', $termino)
+        ->groupEnd()
+        ->findAll();
+} else {
+    $productos = $productoModel
+        ->select('productos.*, marca.descripcion AS nombre_marca')
+        ->join('marca', 'marca.id_marca = productos.id_marca')
+        ->findAll();
+}
 
-            foreach ($stocks as $s) {
-                $stocksPorProducto[$producto_id][$s['id_talle']] = $s['stock'];
-            }
+
+    $stocksPorProducto = [];
+
+    foreach ($productos as $producto) {
+        $producto_id = $producto['producto_id'];
+        $stocks = $stockModel
+            ->where('producto_id', $producto_id)
+            ->findAll();
+
+        foreach ($stocks as $s) {
+            $stocksPorProducto[$producto_id][$s['id_talle']] = $s['stock'];
         }
-
-
-        $marcas = [];
-        foreach ($marcaModel->findAll() as $marca) {
-            $marcas[$marca['id_marca']] = $marca['descripcion'];
-        }
-
-        $categorias = [];
-        foreach ($categoriaModel->findAll() as $categoria) {
-            $categorias[$categoria['id_categoria']] = $categoria['descripcion'];
-        }
-
-        $tipos = [];
-        foreach ($tipoModel->findAll() as $tipo) {
-            $tipos[$tipo['id_tipo']] = $tipo['descripcion'];
-        }
-
-        $talles = $talleModel->findAll();
-
-        $data = [
-            'productos' => $productos,
-            'marcas' => $marcas,
-            'categorias' => $categorias,
-            'tipos' => $tipos,
-            'talles' => $talles,
-            'stocksPorProducto' => $stocksPorProducto,
-        ];
-
-        return view('Plantillas/adminNav_view', $data)
-            . view('Backend/listarProductos_view');
     }
+
+    $marcas = [];
+    foreach ($marcaModel->findAll() as $marca) {
+        $marcas[$marca['id_marca']] = $marca['descripcion'];
+    }
+
+    $categorias = [];
+    foreach ($categoriaModel->findAll() as $categoria) {
+        $categorias[$categoria['id_categoria']] = $categoria['descripcion'];
+    }
+
+    $tipos = [];
+    foreach ($tipoModel->findAll() as $tipo) {
+        $tipos[$tipo['id_tipo']] = $tipo['descripcion'];
+    }
+
+    $talles = $talleModel->findAll();
+
+    $data = [
+        'productos' => $productos,
+        'marcas' => $marcas,
+        'categorias' => $categorias,
+        'tipos' => $tipos,
+        'talles' => $talles,
+        'stocksPorProducto' => $stocksPorProducto,
+        'buscar' => $termino,
+    ];
+
+    return view('Plantillas/adminNav_view', $data)
+         . view('Backend/listarProductos_view', $data);
+}
+
 
 
 
@@ -387,13 +425,19 @@ class ProductosController extends BaseController{
         $data['producto'] = $productoModel->find($id);
         
         // Obtener talles y stock asociados al producto
-        $data['talles_stock'] = $stockModel->where('producto_id', $id)->findAll();
+        $talles_stock = $stockModel->where('producto_id', $id)->findAll();
+        $stocksPorProducto = [];
+        foreach ($talles_stock as $stock) {
+            $stocksPorProducto[$stock['producto_id']][$stock['id_talle']] = $stock['stock'];
+        }   
+
 
         $categoriaModel = new CategoriaModel();
         $marcaModel = new MarcaModel();
         $tipoModel = new Tipo_Model();
         $talleModel = new TalleModel();
 
+        $data['stocksPorProducto'] = $stocksPorProducto;
         $data['categorias'] = $categoriaModel->findAll();
         $data['marcas'] = $marcaModel->findAll();
         $data['tipo'] = $tipoModel->findAll();
@@ -470,15 +514,6 @@ public function activarProducto($id) {
 }
 
 
-    public function guardar(){
-        $carritoData = $this->request->getJSON(true);
-        session()->set('carrito', $carritoData);
-        return $this->response->setJSON([
-            'success' => true,
-            'items' => count($carritoData)
-        ]);
-    }
-
     public function obtenerTalles($idProducto){
         $db = \Config\Database::connect();
         $builder = $db->table('talles_productos');
@@ -490,90 +525,4 @@ public function activarProducto($id) {
         return $this->response->setJSON($talles);
 }
 
-public function guardar_venta()
-{
-    $cart = \Config\Services::cart();
-    $venta = new VentaModel();
-    $detalle = new Detalle_Venta_Model();
-    $productos = new ProductosModel();
-
-    if (is_null($cart)) {
-    die('El carrito no fue inicializado correctamente.');
-}
-
-
-    $cart1 = $cart->contents();
-
-    foreach ($cart1 as $item) {
-        $productos = $productos->where('producto_id', $item['id'])->first();
-        if ($productos['stock'] < $item['qty']) {
-            // Mensaje de producto sin stock
-            return redirect()->route('ver_carrito');
-        }
-    }
-      
-    
-
-
-
-    $data = [
-    'id_cliente' => 2,
-    'venta_fecha' => date('Y-m-d'),
-];
-
-
-$nombre = $this->request->getPost('nombre');
-$apellido = $this->request->getPost('apellido');
-$dni = $this->request->getPost('dni');
-$correo = $this->request->getPost('correo');
-$direccion = $this->request->getPost('direccion');
-
-
-
-$venta_id = $venta->insert($data);
-
-$detalleModel = new \App\Models\Detalle_Venta_Model(); // Asegurate de tener el modelo cargado
-
-$cart1 = $cart->contents();
-foreach ($cart1 as $item) {
-    $detalle_venta = array(
-        'id_producto' => $item['id'],
-        'id_venta' => $venta_id,
-        'detalle_cantidad' => $item['qty'],
-        'detalle_precio' => $item['price'],
-        'Nombre' => $nombre,
-        'Apellido' => $apellido,
-        'Dni' => $dni,
-        'Correo' => $correo,
-        'Direccion' => $direccion
-    );
-    if (!$detalleModel->save($detalle_venta)) {
-        log_message('error', 'Error al guardar detalle: ' . print_r($detalleModel->errors(), true));}
-
-    $productos = $productos->where('producto_id', $item['id'])->first();
-    $data = [
-        'stock' => $productos['stock'] - $item['qty'],
-    ];
-
-    // Actualiza el stock del libro
-    $productos->update($item['id'], $data);
-
-    // Inserta el detalle de venta
-    $detalle_venta->insert($detalle_venta);
-}
-
-
-
-// Mensaje de agradecimiento por la compra
-$cart->destroy();
-session()->setFlashdata('mensaje', '¡Gracias por tu compra!');
-return redirect()->route('Ver_carro');
-
-
-
-}
-
-    public function formulario_cliente(){
-       return view('Backend/form_compra');
-    }
 }

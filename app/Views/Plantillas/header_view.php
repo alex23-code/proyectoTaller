@@ -3,14 +3,14 @@
     <head>
         <meta charset = "utf-8">  
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity=" " crossorigin="">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> 
-        <link href="assets/css/miEstilo.css" rel="stylesheet">
+        <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
+        <link rel="stylesheet" href="<?= base_url('assets/css/miEstilo.css') ?>">
         <title>Forsport</title>
         <section> 
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid"> 
-                    <a class="navbar-brand" href="<?php echo base_url('/'); ?>"><img style="width: 60px" src="assets/img/icono_principal.png" alt=""></a>
+                    <a class="navbar-brand" href="<?php echo base_url('/'); ?>"><img style="width: 60px" src=<?= base_url('assets/img/icono_principal.png') ?>  alt=""></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -27,7 +27,9 @@
                         </div>
                          <div>
                             <button id="menuButton1" class="menu-button"><i class="fa-solid fa-user"></i> Perfil</button>
+                            <?php if(session('login')){ ?>
                             <button id="menuButton2" class="menu-button"><a href="<?= base_url('Ver_carro') ?>"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></button>
+                            <?php } ?>
                             <div id="overlay" class="hidden"></div>
                             <div id="profileMenu" class="menu hidden">
                                 <h2>Perfil</h2>
@@ -117,6 +119,8 @@
                                             </div>
                                             <?php echo form_close()?>
                                         </div>
+                                        <h3 class="configuracion-titulo">🧾 Historial de Compras</h3>
+                                        <a href="<?= base_url('cliente/historial') ?>" class="btn btn-outline-primary" style="width:70%">Ver Historial</a>
                                     </div>
                                 <?php }else{ ?>
                                     <button class="btn btn-outline-success botonIniciarSesion" type="submit" onclick="location.href='<?= base_url('Iniciar_Sesion') ?>';">Iniciar Sesion</button>
@@ -152,6 +156,24 @@
                     </div>
                 </div>
             </nav>
+            <?php if (session()->getFlashdata('carro_ok')): ?>
+                <div id="alerta" style="
+                    display: none;
+                    position: fixed;
+                    top: 120px;
+                    right: 20px;
+                    background-color: #d1e7dd;
+                    color: #0f5132;
+                    padding: 12px 20px;
+                    border-radius: 5px;
+                    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                    font-size: 14px;
+                    z-index: 9999;
+                    cursor: pointer;
+                " onclick="cerrarAlerta()">
+                    <?= esc(session('carro_ok')) ?>
+                </div>
+            <?php endif; ?>
         </section>
     </head>  
 </html>

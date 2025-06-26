@@ -47,6 +47,7 @@ class Consultas_Controller extends BaseController{
             'Correo' => $request->getPost('correo'),
             'NumTelefono' => $request->getPost('telefono'),
             'Consulta' => $request->getPost('consulta'),
+            'leido'        => 0 
             ];
 
             $consulta = new Consultas_Model();
@@ -62,10 +63,33 @@ class Consultas_Controller extends BaseController{
     }
 
     public function listarConsultas(){
-        $consulta = new Consultas_Model();
-        $data['consulta'] = $consulta->findAll();
+        $consultaModel = new Consultas_Model();
+        $busqueda = $this->request->getGet('q');
+
+        if ($busqueda) {
+            $consultaModel->like('Nombre', $busqueda)
+                        ->orLike('Correo', $busqueda)
+                        ->orLike('Consulta', $busqueda);
+        }
+
+        $data['consulta'] = $consultaModel->findAll();
         $data['titulo'] = 'Listado de Consultas';
-        return view('plantillas/adminNav_view', $data).
+
+
+        return view('plantillas/adminNav_view', $data) .
             view('Backend/verConsultas_view', $data);
+    }
+
+    public function marcarLeido($id){
+        $modelo = new Consultas_Model();
+
+        $consulta = $modelo->find($id);
+        if (!$consulta) {
+            return redirect()->back()->with('error', 'Consulta no encontrada.');
+        }
+
+        $modelo->update($id, ['leido' => 1]);
+
+        return redirect()->back()->with('success', 'Consulta marcada como leída.');
     }
 }

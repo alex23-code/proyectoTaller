@@ -15,7 +15,14 @@ class Usuarios_Model extends Model
     protected $useSoftDeletes = false;
 
     protected $allowedFields = ['persona_apellido', 'persona_nombre', 'persona_telefono',
-    'persona_mail', 'persona_password', 'perfil_id', 'persona_estado'];
+    'persona_email', 'persona_password', 'perfil_id', 'persona_estado'];
     
-    
+    protected $useTimestamps = false;
+    protected $createdField = '';
+    protected $updatedField = '';
+    protected $deletedField = '';
+
+    protected $validationRules = [];
+    protected $validationMessages = [];
+    protected $skipValidation = false;
 }
