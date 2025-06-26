@@ -1,0 +1,66 @@
+/* Contenedor principal */
+.container-fluid {
+  padding: 20px;
+  flex: 1;
+
+}
+
+/* Títulos */
+h2 {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Tabla */
+.table {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
+
+.table thead {
+  background-color: #f8f9fa;
+  color: #343a40;
+  font-weight: 600;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f3f5;
+}
+
+.table td,
+.table th {
+  text-align: center;
+  vertical-align: middle;
+  padding: 12px;
+}
+
+/* Botones */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  font-size: 0.85rem;
+  padding: 5px 10px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004a99;
+}
+
+/* Alertas */
+.alert-info {
+  font-size: 1rem;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+/* Responsive tweak */
+@media (max-width: 576px) {
+  .table-responsive {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    font-size: 0.75rem;
+  }
+}

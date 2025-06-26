@@ -19,6 +19,59 @@ footer{
     flex-wrap: wrap;
 }
 
+.modal-content {
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: fadeInUp 0.3s ease;
+}
+
+.modal-header {
+  background: linear-gradient(135deg, #4e73df, #6c63ff);
+  color: white;
+  border-bottom: none;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.modal-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.modal-body {
+  padding: 20px;
+  font-size: 0.95rem;
+}
+
+.modal-footer {
+  border-top: none;
+  padding: 15px 20px;
+}
+
+.modal-backdrop.show {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Extra: estiliza los selects y los inputs */
+.modal select,
+.modal input[type="number"] {
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  padding: 6px 10px;
+}
+
 footer .footer-section {
     margin: 10px;
 }
